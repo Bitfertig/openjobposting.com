@@ -82,6 +82,12 @@ return [
 
     'locale' => 'en',
 
+    'available_locales' => [
+        'en' => 'en',
+        'de' => 'de',
+        'zh_CN' => 'zh'
+    ],
+
     /*
     |--------------------------------------------------------------------------
     | Application Fallback Locale

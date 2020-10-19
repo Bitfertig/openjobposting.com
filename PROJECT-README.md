@@ -23,3 +23,11 @@ User kommt auf die Seite und kann nach Jobs filtern.
 User wird nach dem Standort gefragt.
 User wird nach seiner Jobbranche gefragt.
 User erhält eine Liste der Jobs seine Filters.
+
+
+## Initial Install
+
+https://laraveldaily.com/multi-language-routes-and-locales-with-auth/
+php artisan make:middleware SetLocale
+
+https://github.com/Laravel-Lang/lang
