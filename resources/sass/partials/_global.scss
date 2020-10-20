@@ -1,0 +1,16 @@
+:root {
+    --col-action: #0f72ba;
+}
+
+
+body {
+    background-color: #ebebeb;
+}
+
+
+.navbar-light .navbar-toggler {
+    border-color: rgba(0, 0, 0, 0);
+}
+.navbar button:focus {
+    outline: 0px none;
+}

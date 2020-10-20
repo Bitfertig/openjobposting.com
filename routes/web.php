@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,13 +31,15 @@ Route::group([
         return view('welcome');
     });
 
-        /* if (! in_array($locale, ['en', 'de'])) {
-            abort(400);
-        } */
-
-
     Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-    Route::resource('/job', App\Http\Controllers\JobController::class);
+    //Route::middleware(['web', 'auth'])->group(function () {
+
+        Route::resource('/job', App\Http\Controllers\JobController::class);
+
+    //});
+
+    Route::resource('/jobs', App\Http\Controllers\JobsController::class);
 
 });
+

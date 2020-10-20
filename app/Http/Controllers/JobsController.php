@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Job;
 use Illuminate\Http\Request;
 
-class JobController extends Controller
+class JobsController extends Controller
 {
     /**
      * Create a new controller instance.
@@ -14,7 +14,7 @@ class JobController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth');
+
     }
 
     /**
@@ -25,7 +25,7 @@ class JobController extends Controller
     public function index()
     {
         //
-        return view('pages.jobposting.form', []);
+        return view('pages.jobs', []);
     }
 
     /**
