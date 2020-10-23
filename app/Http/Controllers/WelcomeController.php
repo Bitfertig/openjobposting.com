@@ -5,18 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Job;
 use Illuminate\Http\Request;
 
-class JobsController extends Controller
+class WelcomeController extends Controller
 {
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-
-    }
-
     /**
      * Display a listing of the resource.
      *
@@ -24,9 +14,10 @@ class JobsController extends Controller
      */
     public function index()
     {
-        //
-        return view('pages.jobs', [
+        $jobs = Job::simplePaginate(15);
 
+        return view('welcome', [
+            'jobs' => $jobs,
         ]);
     }
 
@@ -54,23 +45,21 @@ class JobsController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Job  $job
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($locale, Job $job)
+    public function show($id)
     {
-        return view('pages.job', [
-            'job' => $job
-        ]);
+        //
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Job  $job
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Job $job)
+    public function edit($id)
     {
         //
     }
@@ -79,10 +68,10 @@ class JobsController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Job  $job
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Job $job)
+    public function update(Request $request, $id)
     {
         //
     }
@@ -90,10 +79,10 @@ class JobsController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Job  $job
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Job $job)
+    public function destroy($id)
     {
         //
     }
