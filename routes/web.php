@@ -27,16 +27,11 @@ Route::group([
 
     Auth::routes();
 
-    Route::get('/', [App\Http\Controllers\WelcomeController::class, 'index'])->name('welcome');
+    Route::get('/', [App\Http\Controllers\WelcomeController::class, 'index'])->name('welcome.index');
 
     Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-    //Route::middleware(['web', 'auth'])->group(function () {
-
-        //Route::resource('/job', App\Http\Controllers\JobController::class);
-
-    //});
-
     Route::resource('jobs', App\Http\Controllers\JobsController::class);
+
 });
 

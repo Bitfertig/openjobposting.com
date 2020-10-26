@@ -6987,14 +6987,19 @@ button.bg-success:focus {
   background-color: #2d995b !important;
 }
 
-.bg-info {
+.bg-info,
+.head {
   background-color: #6cb2eb !important;
 }
 
 a.bg-info:hover,
+a.head:hover,
 a.bg-info:focus,
+a.head:focus,
 button.bg-info:hover,
-button.bg-info:focus {
+button.head:hover,
+button.bg-info:focus,
+button.head:focus {
   background-color: #3f9ae5 !important;
 }
 
@@ -7188,7 +7193,8 @@ button.bg-dark:focus {
   display: inline-block !important;
 }
 
-.d-block {
+.d-block,
+a.job-list-item {
   display: block !important;
 }
 
@@ -7204,7 +7210,8 @@ button.bg-dark:focus {
   display: table-cell !important;
 }
 
-.d-flex {
+.d-flex,
+a.job-list-item .sub {
   display: flex !important;
 }
 
@@ -8326,7 +8333,10 @@ button.bg-dark:focus {
   width: 75% !important;
 }
 
-.w-100 {
+.w-100,
+a.job-list-item .date,
+a.job-list-item .organisation,
+a.job-list-item .sub {
   width: 100% !important;
 }
 
@@ -8455,7 +8465,8 @@ button.bg-dark:focus {
 }
 
 .mt-3,
-.my-3 {
+.my-3,
+a.job-list-item {
   margin-top: 1rem !important;
 }
 
@@ -8465,7 +8476,8 @@ button.bg-dark:focus {
 }
 
 .mb-3,
-.my-3 {
+.my-3,
+a.job-list-item {
   margin-bottom: 1rem !important;
 }
 
@@ -8513,6 +8525,7 @@ button.bg-dark:focus {
 }
 
 .mb-5,
+.head,
 .my-5 {
   margin-bottom: 3rem !important;
 }
@@ -8570,7 +8583,8 @@ button.bg-dark:focus {
   padding-left: 0.25rem !important;
 }
 
-.p-2 {
+.p-2,
+a.job-list-item {
   padding: 0.5rem !important;
 }
 
@@ -8647,7 +8661,8 @@ button.bg-dark:focus {
 }
 
 .pt-5,
-.py-5 {
+.py-5,
+.head {
   padding-top: 3rem !important;
 }
 
@@ -8657,7 +8672,8 @@ button.bg-dark:focus {
 }
 
 .pb-5,
-.py-5 {
+.py-5,
+.head {
   padding-bottom: 3rem !important;
 }
 
@@ -10584,11 +10600,13 @@ button.bg-dark:focus {
   text-align: left !important;
 }
 
-.text-right {
+.text-right,
+a.job-list-item .date {
   text-align: right !important;
 }
 
-.text-center {
+.text-center,
+a.job-list-item .title {
   text-align: center !important;
 }
 
@@ -10684,7 +10702,8 @@ button.bg-dark:focus {
   font-style: italic !important;
 }
 
-.text-white {
+.text-white,
+a.job-list-item {
   color: #fff !important;
 }
 
@@ -10921,5 +10940,34 @@ body {
 
 .navbar button:focus {
   outline: 0px none;
+}
+
+.head {
+  background-image: linear-gradient(to right, transparent, #3f6184);
+  color: white;
+  font-size: 1.5em;
+  font-weight: bold;
+  text-shadow: 1px 1px black, 2px 2px #3f6184;
+  letter-spacing: 0.05em;
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+a.job-list-item {
+  border: 3px solid rgba(0, 0, 0, 0.1);
+  text-decoration: none;
+  transition: all 0.3s;
+  background-color: #3f6184;
+  background-image: linear-gradient(to right, #3f6184, transparent), url(/images/circuit.png?2653030059ba4143cc21e585de96eeb8);
+  background-repeat: no-repeat;
+  background-position: bottom right;
+  background-blend-mode: saturation;
+}
+
+a.job-list-item:hover {
+  background-color: #265281;
+}
+
+a.job-list-item .title {
+  font-size: 1.7em;
 }
 

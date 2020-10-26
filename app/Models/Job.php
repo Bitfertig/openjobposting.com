@@ -16,8 +16,22 @@ class Job extends Model
     * @var array
     */
     protected $fillable = [
+        'user_id',
         'title',
         'description',
-        'organisation_name',
+        'date_posted',
+        'valid_through',
+        'organization_name',
+        'organization_url',
+        'employment_type',
+        'location_street',
+        'location_postal_code',
+        'location_locality',
+        'location_country',
+    ];
+
+    protected $casts = [
+        'date_posted' => 'date',
+        'valid_through' => 'date',
     ];
 }

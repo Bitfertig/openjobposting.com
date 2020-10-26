@@ -2002,9 +2002,20 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
+      form_action: window.form.action,
+      form_csrf: window.form.csrf,
       date_posted: '',
       valid_through: '',
       title: '',
@@ -2020,6 +2031,17 @@ __webpack_require__.r(__webpack_exports__);
   },
   mounted: function mounted() {
     console.log('Component mounted.'); //this.$i18n.locale = 'de';
+  },
+  methods: {
+    textarea_rows: function textarea_rows(text) {
+      var min = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 3;
+      var max = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 20;
+      var lines = (text.match(new RegExp('\r?\n', 'g')) || '').length + 1;
+      var rows = lines;
+      if (rows < min) rows = min;
+      if (rows > max) rows = max;
+      return rows;
+    }
   }
 });
 
@@ -42056,517 +42078,458 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c("div", [
     _c("h1", [_vm._v(_vm._s(_vm.$t("Job entry")))]),
-    _vm._v(_vm._s(_vm.$i18n.locale) + "\n\n    "),
-    _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col col-md-6" }, [
-        _c("div", { staticClass: "form-group" }, [
-          _c("label", { attrs: { for: "date_posted" } }, [
-            _vm._v(_vm._s(_vm.$t("Date posted")))
-          ]),
-          _vm._v(" "),
-          _c("input", {
-            directives: [
-              {
-                name: "model",
-                rawName: "v-model",
-                value: _vm.date_posted,
-                expression: "date_posted"
-              }
-            ],
-            staticClass: "form-control",
-            attrs: {
-              type: "date",
-              id: "date_posted",
-              "aria-describedby": "date_posted_help"
-            },
-            domProps: { value: _vm.date_posted },
-            on: {
-              input: function($event) {
-                if ($event.target.composing) {
-                  return
-                }
-                _vm.date_posted = $event.target.value
-              }
-            }
-          }),
-          _vm._v(" "),
-          _c(
-            "small",
-            {
-              staticClass: "form-text text-muted",
-              attrs: { id: "date_posted_help" }
-            },
-            [_vm._v("help.")]
-          )
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "form-group" }, [
-          _c("label", { attrs: { for: "valid_through" } }, [
-            _vm._v(_vm._s(_vm.$t("Expire date")))
-          ]),
-          _vm._v(" "),
-          _c("input", {
-            directives: [
-              {
-                name: "model",
-                rawName: "v-model",
-                value: _vm.valid_through,
-                expression: "valid_through"
-              }
-            ],
-            staticClass: "form-control",
-            attrs: {
-              type: "date",
-              id: "valid_through",
-              "aria-describedby": "valid_through_help"
-            },
-            domProps: { value: _vm.valid_through },
-            on: {
-              input: function($event) {
-                if ($event.target.composing) {
-                  return
-                }
-                _vm.valid_through = $event.target.value
-              }
-            }
-          }),
-          _vm._v(" "),
-          _c(
-            "small",
-            {
-              staticClass: "form-text text-muted",
-              attrs: { id: "valid_through_help" }
-            },
-            [_vm._v("help.")]
-          )
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "form-group" }, [
-          _c("label", { attrs: { for: "title" } }, [
-            _vm._v(_vm._s(_vm.$t("Title")))
-          ]),
-          _vm._v(" "),
-          _c("input", {
-            directives: [
-              {
-                name: "model",
-                rawName: "v-model",
-                value: _vm.title,
-                expression: "title"
-              }
-            ],
-            staticClass: "form-control",
-            attrs: {
-              type: "text",
-              id: "title",
-              "aria-describedby": "title_help"
-            },
-            domProps: { value: _vm.title },
-            on: {
-              input: function($event) {
-                if ($event.target.composing) {
-                  return
-                }
-                _vm.title = $event.target.value
-              }
-            }
-          }),
-          _vm._v(" "),
-          _c(
-            "small",
-            {
-              staticClass: "form-text text-muted",
-              attrs: { id: "title_help" }
-            },
-            [_vm._v("help.")]
-          )
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "form-group" }, [
-          _c("label", { attrs: { for: "description" } }, [
-            _vm._v(_vm._s(_vm.$t("Description")))
-          ]),
-          _vm._v(" "),
-          _c("textarea", {
-            directives: [
-              {
-                name: "model",
-                rawName: "v-model",
-                value: _vm.description,
-                expression: "description"
-              }
-            ],
-            staticClass: "form-control",
-            attrs: {
-              id: "description",
-              rows: "4",
-              "aria-describedby": "description_help"
-            },
-            domProps: { value: _vm.description },
-            on: {
-              input: function($event) {
-                if ($event.target.composing) {
-                  return
-                }
-                _vm.description = $event.target.value
-              }
-            }
-          }),
-          _vm._v(" "),
-          _c(
-            "small",
-            {
-              staticClass: "form-text text-muted",
-              attrs: { id: "description_help" }
-            },
-            [_vm._v("help.")]
-          )
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "form-group" }, [
-          _c("label", { attrs: { for: "organization" } }, [
-            _vm._v(_vm._s(_vm.$t("Organization")))
-          ]),
-          _vm._v(" "),
-          _c("input", {
-            directives: [
-              {
-                name: "model",
-                rawName: "v-model",
-                value: _vm.organization,
-                expression: "organization"
-              }
-            ],
-            staticClass: "form-control",
-            attrs: {
-              type: "text",
-              id: "organization",
-              "aria-describedby": "organization_help"
-            },
-            domProps: { value: _vm.organization },
-            on: {
-              input: function($event) {
-                if ($event.target.composing) {
-                  return
-                }
-                _vm.organization = $event.target.value
-              }
-            }
-          }),
-          _vm._v(" "),
-          _c(
-            "small",
-            {
-              staticClass: "form-text text-muted",
-              attrs: { id: "organization_help" }
-            },
-            [_vm._v("help.")]
-          )
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "form-group" }, [
-          _c("label", { attrs: { for: "organization_url" } }, [
-            _vm._v(_vm._s(_vm.$t("Organization URL")))
-          ]),
-          _vm._v(" "),
-          _c("input", {
-            directives: [
-              {
-                name: "model",
-                rawName: "v-model",
-                value: _vm.organization_url,
-                expression: "organization_url"
-              }
-            ],
-            staticClass: "form-control",
-            attrs: {
-              type: "url",
-              id: "organization_url",
-              "aria-describedby": "organization_url_help"
-            },
-            domProps: { value: _vm.organization_url },
-            on: {
-              input: function($event) {
-                if ($event.target.composing) {
-                  return
-                }
-                _vm.organization_url = $event.target.value
-              }
-            }
-          }),
-          _vm._v(" "),
-          _c(
-            "small",
-            {
-              staticClass: "form-text text-muted",
-              attrs: { id: "organization_url_help" }
-            },
-            [_vm._v("help.")]
-          )
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "form-group" }, [
-          _c("label", { attrs: { for: "employment_type" } }, [
-            _vm._v(_vm._s(_vm.$t("Employment type")))
-          ]),
-          _vm._v(" "),
-          _c(
-            "select",
-            {
+    _vm._v(" "),
+    _c("form", { attrs: { method: "post", action: _vm.form_action } }, [
+      _c("input", {
+        attrs: { type: "hidden", name: "_token" },
+        domProps: { value: _vm.form_csrf }
+      }),
+      _vm._v(" "),
+      _c("div", { staticClass: "row" }, [
+        _c("div", { staticClass: "col col-md-6" }, [
+          _c("div", { staticClass: "form-group" }, [
+            _c("label", { attrs: { for: "date_posted" } }, [
+              _vm._v(_vm._s(_vm.$t("Date posted")))
+            ]),
+            _vm._v(" "),
+            _c("input", {
               directives: [
                 {
                   name: "model",
                   rawName: "v-model",
-                  value: _vm.employment_type,
-                  expression: "employment_type"
+                  value: _vm.date_posted,
+                  expression: "date_posted"
                 }
               ],
               staticClass: "form-control",
               attrs: {
-                id: "employment_type",
-                "aria-describedby": "employment_type_help"
+                type: "date",
+                name: "date_posted",
+                id: "date_posted",
+                "aria-describedby": "date_posted_help"
               },
+              domProps: { value: _vm.date_posted },
               on: {
-                change: function($event) {
-                  var $$selectedVal = Array.prototype.filter
-                    .call($event.target.options, function(o) {
-                      return o.selected
-                    })
-                    .map(function(o) {
-                      var val = "_value" in o ? o._value : o.value
-                      return val
-                    })
-                  _vm.employment_type = $event.target.multiple
-                    ? $$selectedVal
-                    : $$selectedVal[0]
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.date_posted = $event.target.value
                 }
               }
-            },
-            [
-              _c("option", { attrs: { value: "FULL_TIME" } }, [
-                _vm._v(_vm._s(_vm.$t("Full time")))
-              ]),
-              _vm._v(" "),
-              _c("option", { attrs: { value: "PART_TIME" } }, [
-                _vm._v(_vm._s(_vm.$t("Part time")))
-              ]),
-              _vm._v(" "),
-              _c("option", { attrs: { value: "CONTRACTOR" } }, [
-                _vm._v(_vm._s(_vm.$t("Contractor")))
-              ]),
-              _vm._v(" "),
-              _c("option", { attrs: { value: "TEMPORARY" } }, [
-                _vm._v(_vm._s(_vm.$t("Temporary")))
-              ]),
-              _vm._v(" "),
-              _c("option", { attrs: { value: "INTERN" } }, [
-                _vm._v(_vm._s(_vm.$t("Intern")))
-              ]),
-              _vm._v(" "),
-              _c("option", { attrs: { value: "VOLUNTEER" } }, [
-                _vm._v(_vm._s(_vm.$t("Volunteer")))
-              ]),
-              _vm._v(" "),
-              _c("option", { attrs: { value: "PER_DIEM" } }, [
-                _vm._v(_vm._s(_vm.$t("Per diem")))
-              ]),
-              _vm._v(" "),
-              _c("option", { attrs: { value: "OTHER" } }, [
-                _vm._v(_vm._s(_vm.$t("Other")))
-              ])
-            ]
-          ),
-          _vm._v(" "),
-          _c(
-            "small",
-            {
-              staticClass: "form-text text-muted",
-              attrs: { id: "employment_type_help" }
-            },
-            [_vm._v("help.")]
-          )
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "form-group" }, [
-          _c("label", { attrs: { for: "street" } }, [
-            _vm._v(_vm._s(_vm.$t("Street")))
+            })
           ]),
           _vm._v(" "),
-          _c("input", {
-            directives: [
-              {
-                name: "model",
-                rawName: "v-model",
-                value: _vm.street,
-                expression: "street"
-              }
-            ],
-            staticClass: "form-control",
-            attrs: {
-              type: "text",
-              id: "street",
-              "aria-describedby": "street_help"
-            },
-            domProps: { value: _vm.street },
-            on: {
-              input: function($event) {
-                if ($event.target.composing) {
-                  return
-                }
-                _vm.street = $event.target.value
-              }
-            }
-          }),
-          _vm._v(" "),
-          _c(
-            "small",
-            {
-              staticClass: "form-text text-muted",
-              attrs: { id: "street_help" }
-            },
-            [_vm._v("help.")]
-          )
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "form-group" }, [
-          _c("label", { attrs: { for: "postal_code" } }, [
-            _vm._v(_vm._s(_vm.$t("Postal code")))
-          ]),
-          _vm._v(" "),
-          _c("input", {
-            directives: [
-              {
-                name: "model",
-                rawName: "v-model",
-                value: _vm.postal_code,
-                expression: "postal_code"
-              }
-            ],
-            staticClass: "form-control",
-            attrs: {
-              type: "text",
-              id: "postal_code",
-              "aria-describedby": "postal_code_help"
-            },
-            domProps: { value: _vm.postal_code },
-            on: {
-              input: function($event) {
-                if ($event.target.composing) {
-                  return
-                }
-                _vm.postal_code = $event.target.value
-              }
-            }
-          }),
-          _vm._v(" "),
-          _c(
-            "small",
-            {
-              staticClass: "form-text text-muted",
-              attrs: { id: "postal_code_help" }
-            },
-            [_vm._v("help.")]
-          )
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "form-group" }, [
-          _c("label", { attrs: { for: "city" } }, [
-            _vm._v(_vm._s(_vm.$t("City")))
-          ]),
-          _vm._v(" "),
-          _c("input", {
-            directives: [
-              {
-                name: "model",
-                rawName: "v-model",
-                value: _vm.city,
-                expression: "city"
-              }
-            ],
-            staticClass: "form-control",
-            attrs: {
-              type: "text",
-              id: "city",
-              "aria-describedby": "city_help"
-            },
-            domProps: { value: _vm.city },
-            on: {
-              input: function($event) {
-                if ($event.target.composing) {
-                  return
-                }
-                _vm.city = $event.target.value
-              }
-            }
-          }),
-          _vm._v(" "),
-          _c(
-            "small",
-            { staticClass: "form-text text-muted", attrs: { id: "city_help" } },
-            [_vm._v("help.")]
-          )
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "form-group" }, [
-          _c("label", { attrs: { for: "country" } }, [
-            _vm._v(_vm._s(_vm.$t("Country")))
-          ]),
-          _vm._v(" "),
-          _c(
-            "select",
-            {
+          _c("div", { staticClass: "form-group" }, [
+            _c("label", { attrs: { for: "valid_through" } }, [
+              _vm._v(_vm._s(_vm.$t("Expire date")))
+            ]),
+            _vm._v(" "),
+            _c("input", {
               directives: [
                 {
                   name: "model",
                   rawName: "v-model",
-                  value: _vm.country,
-                  expression: "country"
+                  value: _vm.valid_through,
+                  expression: "valid_through"
                 }
               ],
               staticClass: "form-control",
-              attrs: { id: "country", "aria-describedby": "country_help" },
+              attrs: {
+                type: "date",
+                name: "valid_through",
+                id: "valid_through",
+                "aria-describedby": "valid_through_help"
+              },
+              domProps: { value: _vm.valid_through },
               on: {
-                change: function($event) {
-                  var $$selectedVal = Array.prototype.filter
-                    .call($event.target.options, function(o) {
-                      return o.selected
-                    })
-                    .map(function(o) {
-                      var val = "_value" in o ? o._value : o.value
-                      return val
-                    })
-                  _vm.country = $event.target.multiple
-                    ? $$selectedVal
-                    : $$selectedVal[0]
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.valid_through = $event.target.value
                 }
               }
-            },
-            [
-              _vm._l(_vm.countryFlagEmoji.list, function(item, index) {
-                return [
-                  _c("option", { key: index, domProps: { value: item.code } }, [
-                    _vm._v(_vm._s(item.name) + " " + _vm._s(item.emoji))
-                  ])
-                ]
-              })
-            ],
-            2
-          ),
+            })
+          ]),
           _vm._v(" "),
-          _c(
-            "small",
-            {
-              staticClass: "form-text text-muted",
-              attrs: { id: "country_help" }
-            },
-            [_vm._v("help.")]
-          )
+          _c("div", { staticClass: "form-group" }, [
+            _c("label", { attrs: { for: "title" } }, [
+              _vm._v(_vm._s(_vm.$t("Title")))
+            ]),
+            _vm._v(" "),
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.title,
+                  expression: "title"
+                }
+              ],
+              staticClass: "form-control",
+              attrs: {
+                type: "text",
+                name: "title",
+                id: "title",
+                "aria-describedby": "title_help"
+              },
+              domProps: { value: _vm.title },
+              on: {
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.title = $event.target.value
+                }
+              }
+            })
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "form-group" }, [
+            _c("label", { attrs: { for: "description" } }, [
+              _vm._v(_vm._s(_vm.$t("Description")))
+            ]),
+            _vm._v(" "),
+            _c("textarea", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.description,
+                  expression: "description"
+                }
+              ],
+              staticClass: "form-control",
+              attrs: {
+                name: "description",
+                id: "description",
+                rows: _vm.textarea_rows(_vm.description, 10, 30),
+                "aria-describedby": "description_help"
+              },
+              domProps: { value: _vm.description },
+              on: {
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.description = $event.target.value
+                }
+              }
+            })
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "form-group" }, [
+            _c("label", { attrs: { for: "organization" } }, [
+              _vm._v(_vm._s(_vm.$t("Organization")))
+            ]),
+            _vm._v(" "),
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.organization,
+                  expression: "organization"
+                }
+              ],
+              staticClass: "form-control",
+              attrs: {
+                type: "text",
+                name: "organization",
+                id: "organization",
+                "aria-describedby": "organization_help"
+              },
+              domProps: { value: _vm.organization },
+              on: {
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.organization = $event.target.value
+                }
+              }
+            })
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "form-group" }, [
+            _c("label", { attrs: { for: "organization_url" } }, [
+              _vm._v(_vm._s(_vm.$t("Organization URL")))
+            ]),
+            _vm._v(" "),
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.organization_url,
+                  expression: "organization_url"
+                }
+              ],
+              staticClass: "form-control",
+              attrs: {
+                type: "url",
+                name: "organization_url",
+                id: "organization_url",
+                "aria-describedby": "organization_url_help"
+              },
+              domProps: { value: _vm.organization_url },
+              on: {
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.organization_url = $event.target.value
+                }
+              }
+            })
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "form-group" }, [
+            _c("label", { attrs: { for: "employment_type" } }, [
+              _vm._v(_vm._s(_vm.$t("Employment type")))
+            ]),
+            _vm._v(" "),
+            _c(
+              "select",
+              {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.employment_type,
+                    expression: "employment_type"
+                  }
+                ],
+                staticClass: "form-control",
+                attrs: {
+                  name: "employment_type",
+                  id: "employment_type",
+                  "aria-describedby": "employment_type_help"
+                },
+                on: {
+                  change: function($event) {
+                    var $$selectedVal = Array.prototype.filter
+                      .call($event.target.options, function(o) {
+                        return o.selected
+                      })
+                      .map(function(o) {
+                        var val = "_value" in o ? o._value : o.value
+                        return val
+                      })
+                    _vm.employment_type = $event.target.multiple
+                      ? $$selectedVal
+                      : $$selectedVal[0]
+                  }
+                }
+              },
+              [
+                _c("option", { attrs: { value: "FULL_TIME" } }, [
+                  _vm._v(_vm._s(_vm.$t("Full time")))
+                ]),
+                _vm._v(" "),
+                _c("option", { attrs: { value: "PART_TIME" } }, [
+                  _vm._v(_vm._s(_vm.$t("Part time")))
+                ]),
+                _vm._v(" "),
+                _c("option", { attrs: { value: "CONTRACTOR" } }, [
+                  _vm._v(_vm._s(_vm.$t("Contractor")))
+                ]),
+                _vm._v(" "),
+                _c("option", { attrs: { value: "TEMPORARY" } }, [
+                  _vm._v(_vm._s(_vm.$t("Temporary")))
+                ]),
+                _vm._v(" "),
+                _c("option", { attrs: { value: "INTERN" } }, [
+                  _vm._v(_vm._s(_vm.$t("Intern")))
+                ]),
+                _vm._v(" "),
+                _c("option", { attrs: { value: "VOLUNTEER" } }, [
+                  _vm._v(_vm._s(_vm.$t("Volunteer")))
+                ]),
+                _vm._v(" "),
+                _c("option", { attrs: { value: "PER_DIEM" } }, [
+                  _vm._v(_vm._s(_vm.$t("Per diem")))
+                ]),
+                _vm._v(" "),
+                _c("option", { attrs: { value: "OTHER" } }, [
+                  _vm._v(_vm._s(_vm.$t("Other")))
+                ])
+              ]
+            )
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "form-group" }, [
+            _c("label", { attrs: { for: "street" } }, [
+              _vm._v(_vm._s(_vm.$t("Street")))
+            ]),
+            _vm._v(" "),
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.street,
+                  expression: "street"
+                }
+              ],
+              staticClass: "form-control",
+              attrs: {
+                type: "text",
+                name: "street",
+                id: "street",
+                "aria-describedby": "street_help"
+              },
+              domProps: { value: _vm.street },
+              on: {
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.street = $event.target.value
+                }
+              }
+            })
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "form-group" }, [
+            _c("label", { attrs: { for: "postal_code" } }, [
+              _vm._v(_vm._s(_vm.$t("Postal code")))
+            ]),
+            _vm._v(" "),
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.postal_code,
+                  expression: "postal_code"
+                }
+              ],
+              staticClass: "form-control",
+              attrs: {
+                type: "text",
+                name: "postal_code",
+                id: "postal_code",
+                "aria-describedby": "postal_code_help"
+              },
+              domProps: { value: _vm.postal_code },
+              on: {
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.postal_code = $event.target.value
+                }
+              }
+            })
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "form-group" }, [
+            _c("label", { attrs: { for: "city" } }, [
+              _vm._v(_vm._s(_vm.$t("City")))
+            ]),
+            _vm._v(" "),
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.city,
+                  expression: "city"
+                }
+              ],
+              staticClass: "form-control",
+              attrs: {
+                type: "text",
+                name: "city",
+                id: "city",
+                "aria-describedby": "city_help"
+              },
+              domProps: { value: _vm.city },
+              on: {
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.city = $event.target.value
+                }
+              }
+            })
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "form-group" }, [
+            _c("label", { attrs: { for: "country" } }, [
+              _vm._v(_vm._s(_vm.$t("Country")))
+            ]),
+            _vm._v(" "),
+            _c(
+              "select",
+              {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.country,
+                    expression: "country"
+                  }
+                ],
+                staticClass: "form-control",
+                attrs: {
+                  name: "country",
+                  id: "country",
+                  "aria-describedby": "country_help"
+                },
+                on: {
+                  change: function($event) {
+                    var $$selectedVal = Array.prototype.filter
+                      .call($event.target.options, function(o) {
+                        return o.selected
+                      })
+                      .map(function(o) {
+                        var val = "_value" in o ? o._value : o.value
+                        return val
+                      })
+                    _vm.country = $event.target.multiple
+                      ? $$selectedVal
+                      : $$selectedVal[0]
+                  }
+                }
+              },
+              [
+                _vm._l(_vm.countryFlagEmoji.list, function(item, index) {
+                  return [
+                    _c(
+                      "option",
+                      { key: index, domProps: { value: item.code } },
+                      [_vm._v(_vm._s(item.name) + " " + _vm._s(item.emoji))]
+                    )
+                  ]
+                })
+              ],
+              2
+            )
+          ]),
+          _vm._v(" "),
+          _vm._m(0)
         ])
       ])
     ])
   ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "form-group" }, [
+      _c("input", {
+        staticClass: "btn btn-primary",
+        attrs: { type: "submit", value: "Save" }
+      })
+    ])
+  }
+]
 render._withStripped = true
 
 

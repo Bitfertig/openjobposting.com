@@ -16,15 +16,28 @@
             <!-- Right Side Of Navbar -->
             <ul class="navbar-nav ml-auto">
 
-                <!-- Locales Links -->
-                <?php /* var_export( request()->route()->parameters() ); */ ?>
-                @foreach (config('app.available_locales') as $locale_index => $locale)
+                <!-- My Jobs -->
+                @guest
+
+                @else
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route(Route::currentRouteName(), array_merge(request()->route()->parameters(), ['locale'=>$locale_index])) }}"
-                            @if (app()->getLocale() == $locale) style="font-weight: bold; text-decoration: underline" @endif>{{ strtoupper($locale) }}
-                        </a>
+                        <a class="nav-link btn btn-primary text-white" href="{{ route('jobs.index', app()->getLocale()) }}">{{ __('My job advertisings') }}</a>
                     </li>
-                @endforeach
+                @endguest
+
+                <!-- Locales Links -->
+                <li class="nav-item dropdown">
+                    <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                        Language
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                        @foreach (config('app.available_locales') as $locale_index => $locale)
+                            <a class="dropdown-item" href="{{ route(Route::currentRouteName(), array_merge(request()->route()->parameters(), ['locale'=>$locale_index])) }}"
+                                @if (app()->getLocale() == $locale) style="font-weight: bold; text-decoration: underline" @endif>{{ strtoupper($locale) }}
+                            </a>
+                        @endforeach
+                    </div>
+                </li>
 
                 <!-- Authentication Links -->
                 @guest
@@ -39,7 +52,7 @@
                 @else
                     <li class="nav-item dropdown">
                         <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                            {{ Auth::user()->name }}
+                            {{ Auth::user()->firstname }} {{ Auth::user()->lastname }}
                         </a>
 
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">

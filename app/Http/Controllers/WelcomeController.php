@@ -12,11 +12,14 @@ class WelcomeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $jobs = Job::simplePaginate(15);
+        $q = $request->q ?? '';
+
+        $jobs = Job::where('title','LIKE','%'.$q.'%')->simplePaginate(15);
 
         return view('welcome', [
+            'q' => $request->q,
             'jobs' => $jobs,
         ]);
     }
@@ -83,6 +86,11 @@ class WelcomeController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
+    {
+        //
+    }
+
+    public function search($q)
     {
         //
     }

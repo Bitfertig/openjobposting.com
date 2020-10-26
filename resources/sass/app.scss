@@ -11,3 +11,51 @@ html { font-size: 14px; }
 
 
 @import 'partials/global';
+
+
+.head {
+    @extend .bg-info, .mb-5, .py-5;
+    background-image: linear-gradient(to right, transparent, #3f6184);
+    color: white;
+    font-size: 1.5em;
+    font-weight: bold;
+    text-shadow: 1px 1px black, 2px 2px #3f6184;
+    letter-spacing: 0.05em;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+a.job-list-item {
+    @extend
+        .d-block,
+        .my-3,
+        .p-2,
+        .text-white
+    ;
+    border:3px solid rgba(0,0,0, 0.1);
+    text-decoration: none;
+    transition: all 0.3s;
+
+    background-color: #3f6184;
+    background-image: linear-gradient(to right, #3f6184, transparent), url(../img/circuit.png);
+    background-repeat: no-repeat;
+    background-position: bottom right;
+    background-blend-mode: saturation;
+
+    &:hover {
+        background-color: #265281;
+    }
+
+    .title {
+        @extend .text-center;
+        font-size: 1.7em;
+    }
+    .sub {
+        @extend .d-flex, .w-100;
+    }
+    .organisation {
+        @extend .w-100;
+    }
+    .date {
+        @extend .w-100, .text-right;
+    }
+}
