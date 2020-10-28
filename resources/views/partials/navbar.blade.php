@@ -1,7 +1,9 @@
-<nav class="navbar navbar-expand-md navbar-light bg-white">
+<div class="navbar-wrap"><div class="navbar-bg"></div></div>
+<nav class="navbar navbar-expand-md navbar-lightzzz">
     <div class="container">
         <a class="navbar-brand" href="{{ url('/', app()->getLocale()) }}">
-            {{ config('app.name', 'Jobsignalfire') }}
+            <img src="/img/logo.svg" alt="" style="border:1px solid transparent;">
+            JobSignalFire
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
             <span class="navbar-toggler-icon"></span>
@@ -20,8 +22,8 @@
                 @guest
 
                 @else
-                    <li class="nav-item">
-                        <a class="nav-link btn btn-primary text-white" href="{{ route('jobs.index', app()->getLocale()) }}">{{ __('My job advertisings') }}</a>
+                    <li class="nav-item mr-3">
+                        <a class="nav-link btn btn-jsf" href="{{ route('jobs.index', app()->getLocale()) }}">{{ __('My job offerings') }}</a>
                     </li>
                 @endguest
 

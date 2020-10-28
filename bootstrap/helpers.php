@@ -48,7 +48,6 @@ if ( !function_exists('carbon') ) {
 
 
 use Illuminate\Mail\Markdown;
-use Illuminate\Support\HtmlString;
 if ( !function_exists('markdown_to_html') ) {
     /**
      * @param string $text
@@ -60,3 +59,7 @@ if ( !function_exists('markdown_to_html') ) {
         return Markdown::parse($text);
     }
 }
+
+
+
+include __DIR__.'/JobPostingSchema.php';

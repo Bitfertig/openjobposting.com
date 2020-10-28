@@ -32,6 +32,7 @@ Route::group([
     Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
     Route::resource('jobs', App\Http\Controllers\JobsController::class);
+    Route::get('/jobs/{job}/delete', [App\Http\Controllers\JobsController::class, 'delete'])->name('jobs.delete');
 
 });
 

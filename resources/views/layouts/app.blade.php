@@ -18,13 +18,49 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
+    @if( App::Environment() !== 'local' )
+    @if( isset($_COOKIE['laravel_cookie_consent']) && $_GET['laravel_cookie_consent'] == 1 )
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-GR9F8B28FL"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-GR9F8B28FL', { 'anonymize_ip': true });
+    </script>
+    @endif
+    @endif
 </head>
 <body>
+@include('cookieConsent::index')
 <div id="app">
     @include('partials.navbar')
     <main>
         @yield('content')
     </main>
+
+    <footer class="mt-5 border-top py-5">
+        <div class="container">
+            <div class="row">
+                <div class="text-center text-md-left col-md-6">
+                    <a href="{{ config('app.url') }}">
+                        &copy; 2020 jobsignalfire.com
+                    </a>
+                </div>
+                <div class="text-center text-md-right col-md-6">
+                    <a href="http://www.bitfertig.de/impressum/">
+                        Impress
+                    </a>
+                    &middot;
+                    <a href="http://www.bitfertig.de/datenschutzerklaerung/">
+                        Privacy policy
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
 </div>
 @yield('scripts')
 </body>

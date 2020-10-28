@@ -7003,14 +7003,19 @@ button.head:focus {
   background-color: #3f9ae5 !important;
 }
 
-.bg-warning {
+.bg-warning,
+.js-cookie-consent.cookie-consent {
   background-color: #ffed4a !important;
 }
 
 a.bg-warning:hover,
+a.js-cookie-consent.cookie-consent:hover,
 a.bg-warning:focus,
+a.js-cookie-consent.cookie-consent:focus,
 button.bg-warning:hover,
-button.bg-warning:focus {
+button.js-cookie-consent.cookie-consent:hover,
+button.bg-warning:focus,
+button.js-cookie-consent.cookie-consent:focus {
   background-color: #ffe817 !important;
 }
 
@@ -7211,7 +7216,8 @@ a.job-list-item {
 }
 
 .d-flex,
-a.job-list-item .sub {
+a.job-list-item .sub,
+.head {
   display: flex !important;
 }
 
@@ -7508,7 +7514,8 @@ a.job-list-item .sub {
   justify-content: flex-end !important;
 }
 
-.justify-content-center {
+.justify-content-center,
+.head {
   justify-content: center !important;
 }
 
@@ -7528,7 +7535,8 @@ a.job-list-item .sub {
   align-items: flex-end !important;
 }
 
-.align-items-center {
+.align-items-center,
+.head {
   align-items: center !important;
 }
 
@@ -8476,6 +8484,7 @@ a.job-list-item {
 }
 
 .mb-3,
+.job-data,
 .my-3,
 a.job-list-item {
   margin-bottom: 1rem !important;
@@ -8589,7 +8598,8 @@ a.job-list-item {
 }
 
 .pt-2,
-.py-2 {
+.py-2,
+.js-cookie-consent.cookie-consent {
   padding-top: 0.5rem !important;
 }
 
@@ -8599,7 +8609,8 @@ a.job-list-item {
 }
 
 .pb-2,
-.py-2 {
+.py-2,
+.js-cookie-consent.cookie-consent {
   padding-bottom: 0.5rem !important;
 }
 
@@ -8618,7 +8629,8 @@ a.job-list-item {
 }
 
 .pr-3,
-.px-3 {
+.px-3,
+.js-cookie-consent.cookie-consent {
   padding-right: 1rem !important;
 }
 
@@ -8628,11 +8640,13 @@ a.job-list-item {
 }
 
 .pl-3,
-.px-3 {
+.px-3,
+.js-cookie-consent.cookie-consent {
   padding-left: 1rem !important;
 }
 
-.p-4 {
+.p-4,
+.job-data {
   padding: 1.5rem !important;
 }
 
@@ -8661,8 +8675,7 @@ a.job-list-item {
 }
 
 .pt-5,
-.py-5,
-.head {
+.py-5 {
   padding-top: 3rem !important;
 }
 
@@ -8672,8 +8685,7 @@ a.job-list-item {
 }
 
 .pb-5,
-.py-5,
-.head {
+.py-5 {
   padding-bottom: 3rem !important;
 }
 
@@ -10606,6 +10618,7 @@ a.job-list-item .date {
 }
 
 .text-center,
+.js-cookie-consent.cookie-consent,
 a.job-list-item .title {
   text-align: center !important;
 }
@@ -10942,14 +10955,99 @@ body {
   outline: 0px none;
 }
 
+:root {
+  --color-action: #eee40a;
+  --color-subtle: #3f6184;
+  --color-subtle-darker: #265281;
+}
+
+.navbar-wrap {
+  width: 100%;
+  height: 0;
+}
+
+.navbar-wrap .navbar-bg {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 100px;
+}
+
+.navbar-wrap .navbar-bg::after {
+  position: absolute;
+  content: "";
+  width: 500%;
+  height: 500%;
+  bottom: 0px;
+  left: 0px;
+  background-color: #212c4a;
+  background: #212c4a radial-gradient(circle, white 0%, rgba(255, 255, 255, 0) 100%) repeat scroll 0% 0% !important;
+}
+
+nav.navbar {
+  height: 100px !important;
+}
+
+nav.navbar a.nav-link:not(.btn) {
+  color: white;
+}
+
+nav.navbar a.nav-link:not(.btn):hover {
+  color: rgba(255, 255, 255, 0.7);
+  text-shadow: 1px 1px rgba(0, 0, 0, 0.25);
+}
+
+nav .navbar-brand {
+  font-weight: bold;
+  font-size: 1.9em;
+  letter-spacing: 0.04em;
+  color: var(--color-action);
+}
+
+nav .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%280, 0, 0, 0.5%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+nav .dropdown-menu.dropdown-menu-right {
+  border: 0 none;
+}
+
 .head {
-  background-image: linear-gradient(to right, transparent, #3f6184);
+  height: 250px;
+  background-color: var(--color-action);
+  background-image: url(/images/head.jpg?06770362140804c1c47a1d6a7ff2828b);
+  background-size: cover;
+  background-position: top center;
   color: white;
   font-size: 1.5em;
   font-weight: bold;
   text-shadow: 1px 1px black, 2px 2px #3f6184;
   letter-spacing: 0.05em;
   font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+@media screen and (min-width: 900px) {
+  .head {
+    height: 400px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .head {
+    height: 600px;
+  }
+}
+
+.btn-jsf {
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: white;
+  transition: all 0.3s;
+}
+
+.btn-jsf:hover {
+  background-color: white;
+  color: black;
 }
 
 a.job-list-item {
@@ -10969,5 +11067,59 @@ a.job-list-item:hover {
 
 a.job-list-item .title {
   font-size: 1.7em;
+}
+
+a.btn-gear {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3px 7px;
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.3);
+  color: white;
+  transition: all 0.3s;
+  text-decoration: none;
+  vertical-align: middle;
+}
+
+a.btn-gear.dark {
+  color: #000000;
+}
+
+a.btn-gear:hover {
+  background-color: white;
+  color: var(--color-subtle-darker);
+}
+
+.job-data {
+  background-color: rgba(33, 44, 74, 0.1);
+}
+
+table thead {
+  background-color: var(--color-action);
+}
+
+footer a {
+  color: #999;
+  text-decoration: none;
+  transition: all 0.3s;
+}
+
+footer a:hover {
+  text-decoration: none;
+  color: #000;
+}
+
+.js-cookie-consent.cookie-consent button {
+  border: 0 none;
+  background-color: var(--color-subtle);
+  color: white;
+  border-radius: 5px;
+  padding: 5px 10px;
+  transition: all 0.3s;
+}
+
+.js-cookie-consent.cookie-consent button:hover {
+  background-color: var(--color-subtle-darker);
 }
 

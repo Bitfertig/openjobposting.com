@@ -4,7 +4,7 @@
 @section('content')
 <div class="head">
     <div class="container text-center py-5">
-        Make a free job advertising on the internet.
+    Free job offering on the internet.
     </div>
 </div>
 <div class="container">
@@ -37,25 +37,6 @@
     </div>
 
     {{ $jobs->links() }}
-
-</div>
-
-
-<div class="text-center">
-
-    <a href="http://www.bitfertig.de/impressum/">
-        Impress
-    </a>
-
-    <a href="http://www.bitfertig.de/datenschutzerklaerung/">
-        Privacy policy
-    </a>
-
-    <br>
-
-    <a href="{{ config('app.url') }}">
-        Jobsignalfire.com
-    </a>
 
 </div>
 @endsection

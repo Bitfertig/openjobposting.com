@@ -27,7 +27,11 @@ class Job extends Model
         'location_street',
         'location_postal_code',
         'location_locality',
+        'location_region',
         'location_country',
+        'salary_quantitative',
+        'salary_unit',
+        'salary_currency',
     ];
 
     protected $casts = [

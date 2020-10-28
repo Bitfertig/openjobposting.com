@@ -1,9 +1,33 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
+<?php
+$jobform = [
+    'title' => $job->title ?? '',
+    'description' => $job->description ?? '',
+    'date_posted' => $job->date_posted ? $job->date_posted->format('Y-m-d') : '',
+    'valid_through' => $job->valid_through ? $job->valid_through->format('Y-m-d') : '',
+    'organization_name' => $job->organization_name ?? '',
+    'organization_url' => $job->organization_url ?? '',
+    'organization_logo_url' => $job->organization_logo_url ?? '',
+    'employment_type' => $job->employment_type ?? 'FULL_TIME',
+    'location_street' => $job->location_street ?? '',
+    'location_locality' => $job->location_locality ?? '',
+    'location_postal_code' => $job->location_postal_code ?? '',
+    'location_region' => $job->location_region ?? '',
+    'location_country' => $job->location_country ?? '',
+    'salary_quantitative' => $job->salary_quantitative ?? '',
+    'salary_unit' => $job->salary_unit ?? '',
+    'salary_currency' => $job->salary_currency ?? '',
+];
+?>
+<div class="container my-5">
 
-    @if ($errors->any())
+
+    <h1 class="my-4">{{ __('Job entry') }}</h1>
+
+
+    @if( $errors->any() )
         <div class="alert alert-danger">
             <ul>
                 @foreach ($errors->all() as $error)
@@ -13,22 +37,118 @@
         </div>
     @endif
 
-    <div id="app">
-        <jobform-component></jobform-component>
-    </div>
+
+    <form method="POST" action="{{ !$job->exists ? route('jobs.store', app()->getLocale()) : route('jobs.update', [app()->getLocale(), $job->id]) }}" enctype="multipart/form-data">
+        @if( $job->exists )
+            @method('PATCH')
+        @endif
+        @csrf
+
+        <div class="row">
+            <div class="col col-md-6">
+
+                <div class="form-group">
+                    <label for="date_posted">{{ __('Date posted') }}</label>
+                    <input type="date" class="form-control" name="date_posted" id="date_posted" aria-describedby="date_posted_help" v-model="jobform.date_posted">
+                    <!-- <small id="date_posted_help" class="form-text text-muted">help.</small> -->
+                </div>
+
+                <div class="form-group">
+                    <label for="valid_through">{{ __('Expire date') }}</label>
+                    <input type="date" class="form-control" name="valid_through" id="valid_through" aria-describedby="valid_through_help" v-model="jobform.valid_through">
+                    <!-- <small id="valid_through_help" class="form-text text-muted">help.</small> -->
+                </div>
+
+                <div class="form-group">
+                    <label for="title">{{ __('Title') }}</label>
+                    <input type="text" class="form-control" name="title" id="title" aria-describedby="title_help" v-model="jobform.title">
+                    <!-- <small id="title_help" class="form-text text-muted">help.</small> -->
+                </div>
+
+                <div class="form-group">
+                    <label for="description">{{ __('Description') }}</label>
+                    <textarea class="form-control" name="description" id="description" :rows="textarea_rows(jobform.description, 10, 50)" aria-describedby="description_help" v-model="jobform.description"></textarea>
+                    <!-- <small id="description_help" class="form-text text-muted">help.</small> -->
+                </div>
+
+                <div class="form-group">
+                    <label for="organization_name">{{ __('Organization name') }}</label>
+                    <input type="text" class="form-control" name="organization_name" id="organization_name" aria-describedby="organization_name_help" v-model="jobform.organization_name">
+                    <!-- <small id="organization_help" class="form-text text-muted">help.</small> -->
+                </div>
+
+                <div class="form-group">
+                    <label for="organization_url">{{ __('Organization URL') }}</label>
+                    <input type="url" class="form-control" name="organization_url" id="organization_url" aria-describedby="organization_url_help" v-model="jobform.organization_url">
+                    <!-- <small id="organization_url_help" class="form-text text-muted">help.</small> -->
+                </div>
+
+                <div class="form-group">
+                    <label for="employment_type">{{ __('Employment type') }}</label>
+                    <select class="form-control" name="employment_type" id="employment_type" aria-describedby="employment_type_help" v-model="jobform.employment_type">
+                        <option value="FULL_TIME">{{ __('Full time') }}</option>
+                        <option value="PART_TIME">{{ __('Part time') }}</option>
+                        <option value="CONTRACTOR">{{ __('Contractor') }}</option>
+                        <option value="TEMPORARY">{{ __('Temporary') }}</option>
+                        <option value="INTERN">{{ __('Intern') }}</option>
+                        <option value="VOLUNTEER">{{ __('Volunteer') }}</option>
+                        <option value="PER_DIEM">{{ __('Per diem') }}</option>
+                        <option value="OTHER">{{ __('Other') }}</option>
+                    </select>
+                    <!-- <small id="employment_type_help" class="form-text text-muted">help.</small> -->
+                </div>
+
+                <div class="form-group">
+                    <label for="location_street">{{ __('Street') }}</label>
+                    <input type="text" class="form-control" name="location_street" id="location_street" aria-describedby="location_street_help" v-model="jobform.location_street">
+                    <!-- <small id="location_street_help" class="form-text text-muted">help.</small> -->
+                </div>
+
+                <div class="form-group">
+                    <label for="location_postal_code">{{ __('Postal code') }}</label>
+                    <input type="text" class="form-control" name="location_postal_code" id="location_postal_code" aria-describedby="location_postal_code_help" v-model="jobform.location_postal_code">
+                    <!-- <small id="location_postal_code_help" class="form-text text-muted">help.</small> -->
+                </div>
+
+                <div class="form-group">
+                    <label for="location_locality">{{ __('Locality') }}</label>
+                    <input type="text" class="form-control" name="location_locality" id="location_locality" aria-describedby="location_locality_help" v-model="jobform.location_locality">
+                    <!-- <small id="location_locality_help" class="form-text text-muted">help.</small> -->
+                </div>
+
+                <div class="form-group">
+                    <label for="location_region">{{ __('Region') }}</label>
+                    <input type="text" class="form-control" name="location_region" id="location_region" aria-describedby="location_region_help" v-model="jobform.location_region">
+                    <!-- <small id="location_region_help" class="form-text text-muted">help.</small> -->
+                </div>
+
+                <div class="form-group">
+                    <label for="location_country">{{ __('Country') }}</label>
+                    <select class="form-control" name="location_country" id="location_country" aria-describedby="location_country_help" v-model="jobform.location_country">
+                        <template v-for="(item, index) in countryFlagEmoji.list">
+                            <option :key="index" :value="item.code">@{{ item.name }} @{{ item.emoji }}</option>
+                        </template>
+                    </select>
+                    <!-- <small id="location_country_help" class="form-text text-muted">help.</small> -->
+                </div>
+
+
+                <div class="form-group">
+                    <input type="submit" class="btn btn-primary" value="Save">
+                </div>
+
+            </div>
+        </div>
+
+    </form>
+
 
 </div>
 @endsection
 
 
 @section('scripts')
-<?php
-$form = [
-    'action' => route('jobs.store', app()->getLocale()),
-    'csrf' => csrf_token(),
-];
-?>
 <script>
-window.form = <?= json_encode($form) ?>;
+window.jobform = <?= json_encode($jobform) ?>; // used in jobFormMixin.js
 </script>
 @endsection

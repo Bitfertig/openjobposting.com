@@ -12,6 +12,7 @@ import countryFlagEmoji from "country-flag-emoji";
 Vue.set(Vue.prototype, 'countryFlagEmoji', countryFlagEmoji);
 
 import VueI18n from 'vue-i18n';
+import jobFormMixin from "./components/jobFormMixin";
 import messages from './lang';
 
 
@@ -44,6 +45,7 @@ Vue.component('jobform-component', require('./components/JobformComponent.vue').
 
 const app = new Vue({
     el: '#app',
+    mixins: [ jobFormMixin ],
     i18n,
     beforeCreate: function() {
         this.$i18n.locale = document.querySelector('html').lang || 'en'; // Sprache übernehmen von Laravel

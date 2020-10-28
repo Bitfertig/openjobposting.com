@@ -54711,7 +54711,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var country_flag_emoji__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! country-flag-emoji */ "./node_modules/country-flag-emoji/dist/country-flag-emoji.umd.js");
 /* harmony import */ var country_flag_emoji__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(country_flag_emoji__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var vue_i18n__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vue-i18n */ "./node_modules/vue-i18n/dist/vue-i18n.esm.js");
-/* harmony import */ var _lang__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./lang */ "./resources/js/lang/index.js");
+/* harmony import */ var _components_jobFormMixin__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/jobFormMixin */ "./resources/js/components/jobFormMixin.js");
+/* harmony import */ var _lang__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./lang */ "./resources/js/lang/index.js");
 /**
  * First we will load all of this project's JavaScript dependencies which
  * includes Vue and other libraries. It is a great starting point when
@@ -54724,11 +54725,12 @@ window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.
 Vue.set(Vue.prototype, 'countryFlagEmoji', country_flag_emoji__WEBPACK_IMPORTED_MODULE_0___default.a);
 
 
+
 Vue.use(vue_i18n__WEBPACK_IMPORTED_MODULE_1__["default"]);
 var i18n = new vue_i18n__WEBPACK_IMPORTED_MODULE_1__["default"]({
   locale: 'en',
   fallbackLocale: 'en',
-  messages: _lang__WEBPACK_IMPORTED_MODULE_2__["default"]
+  messages: _lang__WEBPACK_IMPORTED_MODULE_3__["default"]
 });
 /**
  * The following block of code may be used to automatically register your
@@ -54750,6 +54752,7 @@ Vue.component('jobform-component', __webpack_require__(/*! ./components/JobformC
 
 var app = new Vue({
   el: '#app',
+  mixins: [_components_jobFormMixin__WEBPACK_IMPORTED_MODULE_2__["default"]],
   i18n: i18n,
   beforeCreate: function beforeCreate() {
     this.$i18n.locale = document.querySelector('html').lang || 'en'; // Sprache übernehmen von Laravel
@@ -54869,6 +54872,42 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_JobformComponent_vue_vue_type_template_id_4d37a067___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
+
+/***/ }),
+
+/***/ "./resources/js/components/jobFormMixin.js":
+/*!*************************************************!*\
+  !*** ./resources/js/components/jobFormMixin.js ***!
+  \*************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      jobform: window.jobform
+    };
+  },
+  created: function created() {
+    console.log('hello from mixin!');
+  },
+  mounted: function mounted() {
+    console.log('Component mounted.'); //this.$i18n.locale = 'de';
+  },
+  methods: {
+    textarea_rows: function textarea_rows(text) {
+      var min = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 3;
+      var max = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 20;
+      var lines = (text.match(new RegExp('\r?\n', 'g')) || '').length + 1;
+      var rows = lines;
+      if (rows < min) rows = min;
+      if (rows > max) rows = max;
+      return rows;
+    }
+  }
+});
 
 /***/ }),
 
