@@ -43,5 +43,5 @@ jobs:
           ftp-server: ${{ secrets.JOBSIGNALFIRE_FTP_SERVER }}/httpdocs/www.jobsignalfire.com/
           ftp-username: ${{ secrets.JOBSIGNALFIRE_FTP_USERNAME }}
           ftp-password: ${{ secrets.JOBSIGNALFIRE_FTP_PASSWORD }}
-          # $ ssh-keyscan -p 22 jobsignalfire.com
+          ## $ ssh-keyscan -p 22 jobsignalfire.com
           known-hosts: [jobsignalfire.com]:22 ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDC/45lv0xPgsjrvjWcqdM79wuzZlcCZu2FUL4CR5fApo/2te2ZTvOWP6otiqF0ybPW3lnupmweAxezKo4Y6XCQppNzldNwSQ5V4Qt7R2jBWpDaZiZpQ6qNdLhHJr0zZYoj1udzuHjHZB4gWjrlcbumh5W5/6GEHTU/fKkM+L6TY0G/g/GAcPL6NxjngBghv0RcIbBXKj5962ePk0M7iHYFA4qfdSie9HIaMIsyk8I4VgTOvcjoD7R/TuHwNe7OQv61Nf4OVZDXLLobKvuCYnKLCkYGngcAJAmnnr26WH/kyxyhDx7yJ24rnsJuwgivA893XZuNYgr9vm7IugxQ+iLV
