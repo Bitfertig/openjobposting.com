@@ -20,13 +20,18 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v2.1.0
         with:
           fetch-depth: 2
+#      - name: Use Node.js 12.x
+#        uses: actions/setup-node@v1
+#        with:
+#          node-version: '12.x'
+      - name: List output files
+        run: ls
       - name: FTP-Deploy-Action
         uses: SamKirkland/FTP-Deploy-Action@3.1.1
         with:
-          ftp-server: ${{ secrets.JOBSIGNALFIRE_FTP_SERVER }}/
+          ftp-server: ${{ secrets.JOBSIGNALFIRE_FTP_SERVER }}/www.jobsignalfire.com/
           ftp-username: ${{ secrets.JOBSIGNALFIRE_FTP_USERNAME }}
           ftp-password: ${{ secrets.JOBSIGNALFIRE_FTP_PASSWORD }}
-
