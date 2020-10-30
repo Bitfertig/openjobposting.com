@@ -33,8 +33,8 @@ jobs:
       #- name: Install composer dependencies
       #  uses: php-actions/composer@v2
 
-      - name: List output files
-        run: ls
+      #- name: List output files
+      #  run: ls
 
       # FTP upload
       - name: FTP-Deploy-Action
@@ -45,3 +45,11 @@ jobs:
           ftp-password: ${{ secrets.JOBSIGNALFIRE_FTP_PASSWORD }}
           git-ftp-args: --insecure
 
+      - name: Executing remote ssh commands using password
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.JOBSIGNALFIRE_SSH_HOST }}
+          username: ${{ secrets.JOBSIGNALFIRE_SSH_USERNAME }}
+          password: ${{ secrets.JOBSIGNALFIRE_SSH_PASSWORD }}
+          port: ${{ secrets.JOBSIGNALFIRE_SSH_PORT }}
+          script: whoami
