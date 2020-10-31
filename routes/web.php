@@ -19,6 +19,9 @@ Route::get('/', function () {
     return redirect(app()->getLocale());
 });
 
+Route::get('/sitemapindex.xml', [App\Http\Controllers\SitemapController::class, 'sitemapindex_xml'])->name('sitemapindex');
+Route::get('/sitemap_{locale}.xml', [App\Http\Controllers\SitemapController::class, 'sitemap_xml'])->name('sitemap');
+
 Route::group([
     'prefix' => '{locale}',
     //'where' => ['locale' => '[a-zA-Z]{2}'], // only 2 letters
