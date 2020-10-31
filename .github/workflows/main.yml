@@ -44,4 +44,4 @@ jobs:
           script: |
             cd /var/www/vhosts/jobsignalfire.com/httpdocs/www.jobsignalfire.com/
             ${{ secrets.JOBSIGNALFIRE_PHP }} ${{ secrets.JOBSIGNALFIRE_COMPOSER }} install
-            ${{ secrets.JOBSIGNALFIRE_PHP }} artisan migrate
+            ${{ secrets.JOBSIGNALFIRE_PHP }} artisan migrate --force
