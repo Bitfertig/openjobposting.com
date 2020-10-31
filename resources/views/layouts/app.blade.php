@@ -49,7 +49,7 @@
                         Impress
                     </a>
                     &middot;
-                    <a href="http://www.bitfertig.de/datenschutzerklaerung">
+                    <a href="{{ route('privacy.index', app()->getLocale()) }}">
                         Privacy policy
                     </a>
                 </div>
