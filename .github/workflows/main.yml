@@ -34,6 +34,7 @@ jobs:
           ftp-password: ${{ secrets.JOBSIGNALFIRE_FTP_PASSWORD }}
           git-ftp-args: --insecure
 
+      ## SSH connect
       - name: Executing remote ssh commands using password
         uses: appleboy/ssh-action@master
         with:
