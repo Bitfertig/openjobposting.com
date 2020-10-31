@@ -74,8 +74,9 @@ $sjp->set('jobLocation.address.postalCode', $job->location_postal_code);
 $sjp->set('jobLocation.address.addressLocality', $job->location_locality);
 $sjp->set('jobLocation.address.addressRegion', $job->location_region); // adressRegion (Land-Bundesland als ISO 3166-2 Code) https://de.wikipedia.org/wiki/ISO_3166-2
 $sjp->set('jobLocation.address.addressCountry', $job->location_country);
-#$sjp->set('baseSalary.currency', 'EUR');
-#$sjp->set('baseSalary.value', 'nach Vereinbarung / Qualifikation');
+if ( !empty($job->salary_quantitative) ) $sjp->set('baseSalary.value', $job->salary_quantitative); // nach Vereinbarung / Qualifikation
+if ( !empty($job->salary_unit) ) $sjp->set('baseSalary.unit', $job->salary_unit); // nach Vereinbarung / Qualifikation
+if ( !empty($job->salary_currency) ) $sjp->set('baseSalary.currency', $job->salary_currency); // EUR
 //echo '<pre><mark>|'.$sjp->toJson();echo '|</mark></pre>';
 echo $sjp->toScript();
 ?>

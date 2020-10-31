@@ -126,6 +126,7 @@ class JobsController extends Controller
     public function upsert(Request $request, $locale, Job $job = null)
     {
         #dd($request);
+        $job_exists = !$job;
 
         // Validate
         $rules = [
@@ -141,6 +142,9 @@ class JobsController extends Controller
             'location_locality' => 'required',
             'location_region' => 'nullable',
             'location_country' => 'required',
+            'salary_quantitative' => 'nullable',
+            'salary_unit' => 'nullable',
+            'salary_currency' => 'nullable',
         ];
         $attributes = $request->validate($rules);
         $validator = Validator::make($request->all(), $rules);
@@ -149,8 +153,9 @@ class JobsController extends Controller
         if ( $validator->passes() ) {
             $job = $job ?? Job::findOrFail($job);
 
-            abort_if($job->exists && auth()->user() != $job->user_id, 404);
+            abort_if($job->exists && auth()->user()->id != $job->user_id, 404);
 
+            $job->user_id = auth()->user()->id;
             $job->fill($attributes);
             /* $job->title = $request->title;
             $job->description = $request->description;

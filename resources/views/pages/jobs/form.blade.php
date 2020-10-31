@@ -45,32 +45,44 @@ $jobform = [
         @csrf
 
         <div class="row">
-            <div class="col col-md-6">
 
+            <div class="col col-md-8">
                 <div class="form-group">
                     <label for="date_posted">{{ __('Date posted') }}</label>
                     <input type="date" class="form-control" name="date_posted" id="date_posted" aria-describedby="date_posted_help" v-model="jobform.date_posted">
                     <!-- <small id="date_posted_help" class="form-text text-muted">help.</small> -->
                 </div>
+            </div>
+            <div class="col col-md-4"></div>
 
+            <div class="col col-md-8">
                 <div class="form-group">
                     <label for="valid_through">{{ __('Expire date') }}</label>
                     <input type="date" class="form-control" name="valid_through" id="valid_through" aria-describedby="valid_through_help" v-model="jobform.valid_through">
                     <!-- <small id="valid_through_help" class="form-text text-muted">help.</small> -->
                 </div>
+            </div>
+            <div class="col col-md-4"></div>
 
+            <div class="col col-md-8">
                 <div class="form-group">
                     <label for="title">{{ __('Title') }}</label>
                     <input type="text" class="form-control" name="title" id="title" aria-describedby="title_help" v-model="jobform.title">
                     <!-- <small id="title_help" class="form-text text-muted">help.</small> -->
                 </div>
+            </div>
+            <div class="col col-md-4"></div>
 
+            <div class="col col-md-8">
                 <div class="form-group">
                     <label for="description">{{ __('Description') }}</label>
                     <textarea class="form-control" name="description" id="description" :rows="textarea_rows(jobform.description, 10, 50)" aria-describedby="description_help" v-model="jobform.description"></textarea>
                     <!-- <small id="description_help" class="form-text text-muted">help.</small> -->
                 </div>
+            </div>
+            <div class="col col-md-4"></div>
 
+            <div class="col col-md-8">
                 <div class="form-group">
                     <label for="organization_name">{{ __('Organization name') }}</label>
                     <input type="text" class="form-control" name="organization_name" id="organization_name" aria-describedby="organization_name_help" v-model="jobform.organization_name">
@@ -82,7 +94,10 @@ $jobform = [
                     <input type="url" class="form-control" name="organization_url" id="organization_url" aria-describedby="organization_url_help" v-model="jobform.organization_url">
                     <!-- <small id="organization_url_help" class="form-text text-muted">help.</small> -->
                 </div>
+            </div>
+            <div class="col col-md-4"></div>
 
+            <div class="col col-md-8">
                 <div class="form-group">
                     <label for="employment_type">{{ __('Employment type') }}</label>
                     <select class="form-control" name="employment_type" id="employment_type" aria-describedby="employment_type_help" v-model="jobform.employment_type">
@@ -97,7 +112,10 @@ $jobform = [
                     </select>
                     <!-- <small id="employment_type_help" class="form-text text-muted">help.</small> -->
                 </div>
+            </div>
+            <div class="col col-md-4"></div>
 
+            <div class="col col-md-8">
                 <div class="form-group">
                     <label for="location_street">{{ __('Street') }}</label>
                     <input type="text" class="form-control" name="location_street" id="location_street" aria-describedby="location_street_help" v-model="jobform.location_street">
@@ -131,13 +149,35 @@ $jobform = [
                     </select>
                     <!-- <small id="location_country_help" class="form-text text-muted">help.</small> -->
                 </div>
-
-
-                <div class="form-group">
-                    <input type="submit" class="btn btn-primary" value="Save">
-                </div>
-
             </div>
+            <div class="col col-md-4"></div>
+
+            <div class="col col-md-8">
+                <div class="form-group">
+                    <label for="salary_quantitative">{{ __('Salary quantitative') }}</label>
+                    <input type="text" class="form-control" name="salary_quantitative" id="salary_quantitative" aria-describedby="help_salary_quantitative" v-model="jobform.salary_quantitative">
+                    <small id="help_salary_quantitative" class="form-text text-muted">Examples: 40.00, "by agreement / qualification", ...</small>
+                </div>
+                <div class="form-group">
+                    <label for="salary_unit">{{ __('Salary unit') }}</label>
+                    <input type="text" class="form-control" name="salary_unit" id="salary_unit" aria-describedby="salary_unit_help" v-model="jobform.salary_unit">
+                    <small id="salary_unit_help" class="form-text text-muted">Examples: HOUR, ...</small>
+                </div>
+                <div class="form-group">
+                    <label for="salary_currency">{{ __('Salary currency') }}</label>
+                    <input type="text" class="form-control" name="salary_currency" id="salary_currency" aria-describedby="salary_currency_help" v-model="jobform.salary_currency">
+                    <small id="salary_currency_help" class="form-text text-muted">Examples: EUR, USD, ...</small>
+                </div>
+            </div>
+            <div class="col col-md-4"></div>
+
+            <div class="col col-md-12">
+                <div class="form-group">
+                    <a class="btn btn-secondary" href="{{ route('jobs.index', app()->getLocale()) }}">Cancel</a>
+                    <input type="submit" class="btn btn-primary" value="Publish">
+                </div>
+            </div>
+
         </div>
 
     </form>
