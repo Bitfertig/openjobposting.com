@@ -26,6 +26,7 @@
     "dependencies": {
         "bootstrap-icons": "^1.0.0",
         "country-flag-emoji": "^1.0.3",
+        "iso-3166": "^3.1.0",
         "vue-i18n": "^8.22.0"
     }
 }

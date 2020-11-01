@@ -46,43 +46,43 @@ $jobform = [
 
         <div class="row">
 
-            <div class="col col-md-8">
+            <div class="col col-12 col-md-8">
                 <div class="form-group">
                     <label for="date_posted">{{ __('Date posted') }}</label>
                     <input type="date" class="form-control" name="date_posted" id="date_posted" aria-describedby="date_posted_help" v-model="jobform.date_posted">
                     <!-- <small id="date_posted_help" class="form-text text-muted">help.</small> -->
                 </div>
             </div>
-            <div class="col col-md-4"></div>
+            <div class="col col-12 col-md-4"></div>
 
-            <div class="col col-md-8">
+            <div class="col col-12 col-md-8">
                 <div class="form-group">
                     <label for="valid_through">{{ __('Expire date') }}</label>
                     <input type="date" class="form-control" name="valid_through" id="valid_through" aria-describedby="valid_through_help" v-model="jobform.valid_through">
                     <!-- <small id="valid_through_help" class="form-text text-muted">help.</small> -->
                 </div>
             </div>
-            <div class="col col-md-4"></div>
+            <div class="col col-12 col-md-4"></div>
 
-            <div class="col col-md-8">
+            <div class="col col-12 col-md-8">
                 <div class="form-group">
                     <label for="title">{{ __('Title') }}</label>
                     <input type="text" class="form-control" name="title" id="title" aria-describedby="title_help" v-model="jobform.title">
                     <!-- <small id="title_help" class="form-text text-muted">help.</small> -->
                 </div>
             </div>
-            <div class="col col-md-4"></div>
+            <div class="col col-12 col-md-4"></div>
 
-            <div class="col col-md-8">
+            <div class="col col-12 col-md-8">
                 <div class="form-group">
                     <label for="description">{{ __('Description') }}</label>
                     <textarea class="form-control" name="description" id="description" :rows="textarea_rows(jobform.description, 10, 50)" aria-describedby="description_help" v-model="jobform.description"></textarea>
                     <!-- <small id="description_help" class="form-text text-muted">help.</small> -->
                 </div>
             </div>
-            <div class="col col-md-4"></div>
+            <div class="col col-12 col-md-4"></div>
 
-            <div class="col col-md-8">
+            <div class="col col-12 col-md-8">
                 <div class="form-group">
                     <label for="organization_name">{{ __('Organization name') }}</label>
                     <input type="text" class="form-control" name="organization_name" id="organization_name" aria-describedby="organization_name_help" v-model="jobform.organization_name">
@@ -95,9 +95,9 @@ $jobform = [
                     <!-- <small id="organization_url_help" class="form-text text-muted">help.</small> -->
                 </div>
             </div>
-            <div class="col col-md-4"></div>
+            <div class="col col-12 col-md-4"></div>
 
-            <div class="col col-md-8">
+            <div class="col col-12 col-md-8">
                 <div class="form-group">
                     <label for="employment_type">{{ __('Employment type') }}</label>
                     <select class="form-control" name="employment_type" id="employment_type" aria-describedby="employment_type_help" v-model="jobform.employment_type">
@@ -113,9 +113,9 @@ $jobform = [
                     <!-- <small id="employment_type_help" class="form-text text-muted">help.</small> -->
                 </div>
             </div>
-            <div class="col col-md-4"></div>
+            <div class="col col-12 col-md-4"></div>
 
-            <div class="col col-md-8">
+            <div class="col col-12 col-md-8">
                 <div class="form-group">
                     <label for="location_street">{{ __('Street') }}</label>
                     <input type="text" class="form-control" name="location_street" id="location_street" aria-describedby="location_street_help" v-model="jobform.location_street">
@@ -134,25 +134,33 @@ $jobform = [
                     <!-- <small id="location_locality_help" class="form-text text-muted">help.</small> -->
                 </div>
 
-                <div class="form-group">
-                    <label for="location_region">{{ __('Region') }}</label>
-                    <input type="text" class="form-control" name="location_region" id="location_region" aria-describedby="location_region_help" v-model="jobform.location_region">
-                    <!-- <small id="location_region_help" class="form-text text-muted">help.</small> -->
+                <div class="form-row">
+                    <div class="form-group col-6 col-md-6">
+                        <label for="location_country">{{ __('Country') }}</label>
+                        <select class="form-control" name="location_country" id="location_country" aria-describedby="location_country_help" v-model="jobform.location_country">
+                            <template v-for="(item, index) in countryFlagEmoji.list">
+                                <option :key="index" :value="item.code">@{{ item.name }} @{{ item.emoji }}</option>
+                            </template>
+                        </select>
+                        <!-- <small id="location_country_help" class="form-text text-muted">help.</small> -->
+                    </div>
+
+                    <div class="form-group col-6 col-md-6">
+                        <label for="location_region">{{ __('Region') }}</label>
+                        <select class="form-control" name="location_region" id="location_region" aria-describedby="help_location_region" v-model="jobform.location_region">
+                            <template v-for="(item, index) in iso31662.filter((item) => { return item.parent == jobform.location_country; })">
+                                <option :key="index" :value="item.code">@{{ item.name }}</option>
+                            </template>
+                        </select>
+                        <!-- <small id="help_location_region" class="form-text text-muted">help.</small> -->
+                    </div>
                 </div>
 
-                <div class="form-group">
-                    <label for="location_country">{{ __('Country') }}</label>
-                    <select class="form-control" name="location_country" id="location_country" aria-describedby="location_country_help" v-model="jobform.location_country">
-                        <template v-for="(item, index) in countryFlagEmoji.list">
-                            <option :key="index" :value="item.code">@{{ item.name }} @{{ item.emoji }}</option>
-                        </template>
-                    </select>
-                    <!-- <small id="location_country_help" class="form-text text-muted">help.</small> -->
-                </div>
+
             </div>
-            <div class="col col-md-4"></div>
+            <div class="col col-12 col-md-4"></div>
 
-            <div class="col col-md-8">
+            <div class="col col-12 col-md-8">
                 <div class="form-group">
                     <label for="salary_quantitative">{{ __('Salary quantitative') }}</label>
                     <input type="text" class="form-control" name="salary_quantitative" id="salary_quantitative" aria-describedby="help_salary_quantitative" v-model="jobform.salary_quantitative">
@@ -169,7 +177,7 @@ $jobform = [
                     <small id="salary_currency_help" class="form-text text-muted">Examples: EUR, USD, ...</small>
                 </div>
             </div>
-            <div class="col col-md-4"></div>
+            <div class="col col-12 col-md-4"></div>
 
             <div class="col col-md-12">
                 <div class="form-group">

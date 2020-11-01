@@ -5,10 +5,10 @@ export default {
         }
     },
     created: function(){
-        console.log('hello from mixin!')
+
     },
     mounted() {
-        console.log('Component mounted.')
+        console.log('Mixin mounted.')
         //this.$i18n.locale = 'de';
     },
     methods: {
