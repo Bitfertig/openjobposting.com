@@ -13,6 +13,7 @@ Job offers by users, with output in the Jobposting Schema as a readable version 
 
 ### Used extensions
 https://github.com/Laravel-Lang/lang
+https://spatie.be/docs/laravel-permission/v3/introduction
 
 
 
