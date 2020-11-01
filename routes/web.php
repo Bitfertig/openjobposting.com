@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -15,8 +16,12 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-Route::get('/', function () {
-    return redirect(app()->getLocale());
+Route::get('/', function (Request $request) {
+    $locales = config('app.available_locales');
+    $language = $request->server('HTTP_ACCEPT_LANGUAGE');
+    $locale = explode('-', $language)[0];
+    $locale = in_array($locale, $locales) ? $locale : app()->getLocale();
+    return redirect($locale);
 });
 
 Route::get('/sitemap.xml', [App\Http\Controllers\SitemapController::class, 'sitemapindex_xml'])->name('sitemapindex');
