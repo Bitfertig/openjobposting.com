@@ -5,19 +5,22 @@ Job offers by users, with output in the Jobposting Schema as a readable version 
 
 ## Idea
 
-* Users can inserate jobs by hand, with a formular like this: http://tools.bitfertig.de/jobposting-generator/
+* Users can inserate jobs by hand, with a formular like this [Jobposting Generator](http://tools.bitfertig.de/jobposting-generator/)
 * Output will be via HTML and "Jobposting"-JSON.
 
 
 
-## Used extensions
-https://github.com/Laravel-Lang/lang
-https://spatie.be/docs/laravel-permission/v3/introduction
-https://github.com/spatie/laravel-cookie-consent
+## Built with
+* [Laravel](https://laravel.com/)
+* [Laravel-Lang](https://github.com/Laravel-Lang/lang)
+* [Spatie: laravel-permission](https://spatie.be/docs/laravel-permission/v3/introduction)
+* [Spatie: laravel-cookie-consent](https://github.com/spatie/laravel-cookie-consent)
 
 
 
+## License
 
+[GNU GPLv3](https://choosealicense.com/licenses/gpl-3.0/)
 
 ## Author
 Aurelian Hermand, www.bitfertig.de
