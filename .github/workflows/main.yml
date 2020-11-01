@@ -1,9 +1,8 @@
-# This is a basic workflow to help you get started with Actions
+# Github workflow
 
 name: CI
 
-# Controls when the action will run. Triggers the workflow on push or pull request
-# events but only for the master branch
+# Triggers the workflow on push or pull request events only for the main branch
 on:
   push:
     branches: [ main ]
@@ -34,7 +33,7 @@ jobs:
           ftp-password: ${{ secrets.JOBSIGNALFIRE_FTP_PASSWORD }}
           git-ftp-args: --insecure
 
-      ## SSH connect
+      # SSH connect
       - name: Executing remote ssh commands using password
         uses: appleboy/ssh-action@master
         with:
