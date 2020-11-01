@@ -62,4 +62,13 @@ if ( !function_exists('markdown_to_html') ) {
 
 
 
+use Illuminate\Support\Facades\Route;
+if ( !function_exists('current_route') ) {
+    function current_route() {
+        $route = route(Route::currentRouteName(), array_merge(request()->route()->parameters(), ['locale'=>app()->getLocale()]));
+        return $route;
+    }
+}
+
+
 include __DIR__.'/JobPostingSchema.php';
