@@ -4,10 +4,26 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
+<?php
+$site_title = config('app.name', 'JobSignalFire');
+$site_description = 'A platform to offer jobs online. Jobs will be also presented on search engines.';
+?>
+
+    <title>@yield('title', $site_title)</title>
+
+    <meta name="description" content="{{ $site_description }}">
+    <meta name="keywords" content="job platform, jobposting, seo, job, job offering, advertise jobs, search engine">
+
+    <meta name="twitter:card" content="{{ $site_description }}">
+    <meta name="twitter:site" content="@jobsignalfire">
+    <meta name="twitter:creator" content="@bitfertig">
+    <meta property="og:url" content="{{ current_route() }}">
+    <meta property="og:title" content="{{ $site_title }}">
+    <meta property="og:description" content="{{ $site_description }}">
+    {{-- <meta property="og:image" content="{{ current_route() }}/twitter-article.jpg"> --}}
+
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
-
-    <title>{{ config('app.name', 'Jobsignalfire') }}</title>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
