@@ -22,5 +22,11 @@ Job offers by users, with output in the Jobposting Schema as a readable version 
 
 [GNU GPLv3](https://choosealicense.com/licenses/gpl-3.0/)
 
+
+## Issues
+
+Leave a message on GitHub, if you have an [issue](https://github.com/Bitfertig/jobsignalfire.com/issues).
+
+
 ## Author
 Aurelian Hermand, www.bitfertig.de
