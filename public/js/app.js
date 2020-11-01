@@ -52183,9 +52183,9 @@ __webpack_require__.r(__webpack_exports__);
  */
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
-window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
-window.iso31662 = __webpack_require__(/*! iso-3166/2 */ "./node_modules/iso-3166/2.json"); //console.log(iso31662);
+window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js"); // ISO-3166-2 country and subdivision codes
 
+window.iso31662 = __webpack_require__(/*! iso-3166/2 */ "./node_modules/iso-3166/2.json");
 Vue.set(Vue.prototype, 'iso31662', window.iso31662); // country flags
 
 
@@ -52244,7 +52244,7 @@ window._ = __webpack_require__(/*! lodash */ "./node_modules/lodash/lodash.js");
  */
 
 try {
-  window.Popper = __webpack_require__(/*! popper.js */ "./node_modules/popper.js/dist/esm/popper.js")["default"];
+  //window.Popper = require('popper.js').default;
   window.$ = window.jQuery = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
 
   __webpack_require__(/*! bootstrap */ "./node_modules/bootstrap/dist/js/bootstrap.js");

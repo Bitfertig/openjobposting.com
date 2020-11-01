@@ -9,10 +9,9 @@ require('./bootstrap');
 window.Vue = require('vue');
 
 
+// ISO-3166-2 country and subdivision codes
 window.iso31662 = require('iso-3166/2')
-//console.log(iso31662);
 Vue.set(Vue.prototype, 'iso31662', window.iso31662);
-
 
 // country flags
 import countryFlagEmoji from "country-flag-emoji";
