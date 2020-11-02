@@ -15,6 +15,7 @@ Job offers by users, with output in the Jobposting Schema as a readable version 
 * [Laravel-Lang](https://github.com/Laravel-Lang/lang)
 * [Spatie: laravel-permission](https://spatie.be/docs/laravel-permission/v3/introduction)
 * [Spatie: laravel-cookie-consent](https://github.com/spatie/laravel-cookie-consent)
+* ❤️
 
 
 

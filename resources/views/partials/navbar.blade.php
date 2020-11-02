@@ -58,16 +58,23 @@
                         </a>
 
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="{{ route('logout', app()->getLocale()) }}" onclick="
+
+                            @role('developer|admin')
+                                <a class="dropdown-item" href="{{ route('admin.dashboard.index', app()->getLocale()) }}">
+                                    {{ __('Admin') }}
+                                </a>
+                            @endrole
+
+                            <a class="dropdown-item text-danger" href="{{ route('logout', app()->getLocale()) }}" onclick="
                                 event.preventDefault();
                                 document.getElementById('logout-form').submit();
                             ">
                                 {{ __('Logout') }}
                             </a>
-
                             <form id="logout-form" action="{{ route('logout', app()->getLocale()) }}" method="POST" class="d-none">
                                 @csrf
                             </form>
+
                         </div>
                     </li>
                 @endguest

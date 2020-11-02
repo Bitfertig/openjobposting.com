@@ -39,10 +39,34 @@ Route::group([
 
     Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-    Route::resource('jobs', App\Http\Controllers\JobsController::class);
-    Route::get('/jobs/{job}/delete', [App\Http\Controllers\JobsController::class, 'delete'])->name('jobs.delete');
-
     Route::resource('privacy', App\Http\Controllers\PrivacyController::class);
+
+    Route::group([
+        'middleware' => [
+            'auth',
+        ],
+    ], function() {
+        Route::resource('jobs', App\Http\Controllers\JobsController::class);
+        Route::get('/jobs/{job}/delete', [App\Http\Controllers\JobsController::class, 'delete'])->name('jobs.delete');
+    });
+
+    Route::group([
+        'prefix' => 'admin',
+        'as' => 'admin.',
+        'middleware' => [
+            'auth',
+            'role:developer|admin'
+        ],
+    ], function() {
+        Route::get('/', function (Request $request) {
+            #dd($request);
+            $locale = \App::getLocale();
+            return redirect()->route('admin.dashboard.index', $locale);
+        });
+        Route::resource('dashboard', App\Http\Controllers\Admin\DashboardController::class);
+        Route::resource('accounts', App\Http\Controllers\Admin\AccountsController::class);
+        Route::resource('jobs', App\Http\Controllers\Admin\JobsController::class);
+    });
 
 });
 
