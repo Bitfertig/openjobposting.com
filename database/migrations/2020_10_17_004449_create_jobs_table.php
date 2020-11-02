@@ -33,6 +33,7 @@ class CreateJobsTable extends Migration
             $table->float('salary_quantitative', 8, 2, true)->nullable()->comment('Lohn');
             $table->string('salary_unit', 50)->nullable()->comment('Einheit');
             $table->string('salary_currency', 50)->nullable()->comment('Währung');
+            $table->bigInteger('impressions')->default(0)->comment('Impressionen');
             $table->timestamps();
             $table->softDeletes();
         });
