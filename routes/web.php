@@ -41,13 +41,17 @@ Route::group([
 
     Route::resource('privacy', App\Http\Controllers\PrivacyController::class);
 
+    Route::resource('jobs', App\Http\Controllers\JobsController::class);
+    Route::get('/jobs/{job}/delete', [App\Http\Controllers\JobsController::class, 'delete'])->name('jobs.delete');
+
     Route::group([
+        'prefix' => 'admin',
         'middleware' => [
             'auth',
         ],
     ], function() {
-        Route::resource('jobs', App\Http\Controllers\JobsController::class);
-        Route::get('/jobs/{job}/delete', [App\Http\Controllers\JobsController::class, 'delete'])->name('jobs.delete');
+        $locale = \App::getLocale();
+
     });
 
     Route::group([
