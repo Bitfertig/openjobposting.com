@@ -1,9 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
+<div class="container my-5">
 
-    <h1>Accounts</h1>
+    <h1 class="my-4">Accounts</h1>
 
     <table class="table">
         <thead>
@@ -11,6 +11,7 @@
                 <th>ID</th>
                 <th>Lastname, Firstname</th>
                 <th>Joboffers</th>
+                <th>Gear</th>
             </tr>
         </thead>
         <tbody>
@@ -18,6 +19,7 @@
                 <tr>
                     <td>{{ $user->id }}</td>
                     <td>{{ $user->lastname }}, {{ $user->firstname }}</td>
+                    <td></td>
                     <td></td>
                 </tr>
             @endforeach

@@ -1,9 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
+<div class="container my-5">
 
-    <h1>Admin Dashboard</h1>
+    <h1 class="my-4">Admin Dashboard</h1>
 
     <a href="{{ route('admin.accounts.index', [app()->getLocale()]) }}">
         Users
