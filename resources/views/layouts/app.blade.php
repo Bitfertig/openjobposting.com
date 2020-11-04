@@ -61,6 +61,8 @@ $site_description = 'A platform to offer jobs online. Jobs will be also presente
                     </a>
                 </div>
                 <div class="text-center text-md-right col-md-6">
+                    <a href="https://github.com/Bitfertig/jobsignalfire.com/issues">Report issue</a>
+                    &middot;
                     <a href="http://www.bitfertig.de/impressum">
                         Impress
                     </a>
