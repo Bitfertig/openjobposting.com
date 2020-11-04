@@ -5,9 +5,7 @@
 
     <h1>Account</h1>
 
-    <div>
-
-    </div>
+    <div></div>
 
 </div>
 @endsection
