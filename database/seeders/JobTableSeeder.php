@@ -52,7 +52,7 @@ class JobTableSeeder extends Seeder
         $job->location_street = 'In der Reith 5';
         $job->location_postal_code = '29614';
         $job->location_locality = 'Soltau';
-        $job->location_region = '';
+        $job->location_region = 'DE-NI';
         $job->location_country = 'DE';
         $job->save();
 
@@ -61,16 +61,7 @@ class JobTableSeeder extends Seeder
             for($i = 0; $i < 20; $i++) {
                 $job = new Job();
                 $job->title = Str::random(10);
-                /* $job->description = ''; */
-                //$job->date_posted = '';
-                /* $job->valid_through = ''; */
                 $job->organization_name = Str::random(15);
-                /* $job->organization_url = '';
-                $job->employment_type = '';
-                $job->location_street = '';
-                $job->location_postal_code = '';
-                $job->location_locality = '';
-                $job->location_country = ''; */
                 $job->save();
             }
         }
