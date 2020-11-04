@@ -28,20 +28,20 @@ jobs:
       - name: FTP-Deploy-Action
         uses: SamKirkland/FTP-Deploy-Action@3.1.1
         with:
-          ftp-server: ${{ secrets.JOBSIGNALFIRE_FTP_SERVER }}/var/www/vhosts/jobsignalfire.com/httpdocs/www.jobsignalfire.com/
-          ftp-username: ${{ secrets.JOBSIGNALFIRE_FTP_USERNAME }}
-          ftp-password: ${{ secrets.JOBSIGNALFIRE_FTP_PASSWORD }}
+          ftp-server: ${{ secrets.OPENJOBPOSTING_FTP_SERVER }}/var/www/vhosts/openjobposting.com/httpdocs/www.openjobposting.com/
+          ftp-username: ${{ secrets.OPENJOBPOSTING_FTP_USERNAME }}
+          ftp-password: ${{ secrets.OPENJOBPOSTING_FTP_PASSWORD }}
           git-ftp-args: --insecure
 
       # SSH connect
       - name: Executing remote ssh commands using password
         uses: appleboy/ssh-action@master
         with:
-          host: ${{ secrets.JOBSIGNALFIRE_SSH_HOST }}
-          username: ${{ secrets.JOBSIGNALFIRE_SSH_USERNAME }}
-          password: ${{ secrets.JOBSIGNALFIRE_SSH_PASSWORD }}
-          port: ${{ secrets.JOBSIGNALFIRE_SSH_PORT }}
+          host: ${{ secrets.OPENJOBPOSTING_SSH_HOST }}
+          username: ${{ secrets.OPENJOBPOSTING_SSH_USERNAME }}
+          password: ${{ secrets.OPENJOBPOSTING_SSH_PASSWORD }}
+          port: ${{ secrets.OPENJOBPOSTING_SSH_PORT }}
           script: |
-            cd /var/www/vhosts/jobsignalfire.com/httpdocs/www.jobsignalfire.com/
-            ${{ secrets.JOBSIGNALFIRE_PHP }} ${{ secrets.JOBSIGNALFIRE_COMPOSER }} install
-            ${{ secrets.JOBSIGNALFIRE_PHP }} artisan migrate --force
+            cd /var/www/vhosts/openjobposting.com/httpdocs/www.openjobposting.com/
+            ${{ secrets.OPENJOBPOSTING_PHP }} ${{ secrets.OPENJOBPOSTING_COMPOSER }} install
+            ${{ secrets.OPENJOBPOSTING_PHP }} artisan migrate --force
