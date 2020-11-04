@@ -5,17 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <?php
-$site_title = config('app.name', 'JobSignalFire');
+$site_title = config('app.name', 'OpenJobPosting');
 $site_description = 'A platform to offer jobs online. Jobs will be also presented on search engines.';
 ?>
 
     <title>@yield('title', $site_title)</title>
 
     <meta name="description" content="{{ $site_description }}">
-    <meta name="keywords" content="job platform, jobposting, seo, job, job offering, advertise jobs, search engine">
+    <meta name="keywords" content="open jobposting, job platform, jobposting, seo, job, job offering, advertise jobs, search engine">
 
     <meta name="twitter:card" content="{{ $site_description }}">
-    <meta name="twitter:site" content="@jobsignalfire">
+    <meta name="twitter:site" content="@openjobposting">
     <meta name="twitter:creator" content="@bitfertig">
     <meta property="og:url" content="{{ current_route() }}">
     <meta property="og:title" content="{{ $site_title }}">
@@ -57,11 +57,11 @@ $site_description = 'A platform to offer jobs online. Jobs will be also presente
             <div class="row">
                 <div class="text-center text-md-left col-md-6">
                     <a href="{{ config('app.url') }}">
-                        &copy; 2020 jobsignalfire.com
+                        &copy; 2020 openjobposting.com
                     </a>
                 </div>
                 <div class="text-center text-md-right col-md-6">
-                    <a href="https://github.com/Bitfertig/jobsignalfire.com/issues">Report issue</a>
+                    <a href="https://github.com/Bitfertig/openjobposting.com/issues">Report issue</a>
                     &middot;
                     <a href="http://www.bitfertig.de/impressum">
                         Impress

@@ -1,4 +1,4 @@
-# Project jobsignalfire.com
+# Project openjobposting.com
 
 Job offers by users, with output in the Jobposting Schema as a readable version for search engines.
 
@@ -26,7 +26,7 @@ Job offers by users, with output in the Jobposting Schema as a readable version 
 
 ## Issues
 
-Leave a message on GitHub, if you have an [issue](https://github.com/Bitfertig/jobsignalfire.com/issues).
+Leave a message on GitHub, if you have an [issue](https://github.com/Bitfertig/openjobposting.com/issues).
 
 
 ## Author

@@ -52369,8 +52369,8 @@ module.exports = JSON.parse("{\"Job entry\":\"Job entry\",\"Date posted\":\"Date
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\laragon\www\jobsignalfire_com\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\laragon\www\jobsignalfire_com\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\laragon\www\openjobposting_com\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\laragon\www\openjobposting_com\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
