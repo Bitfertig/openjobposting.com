@@ -8342,6 +8342,7 @@ a.job-list-item .sub,
 }
 
 .w-100,
+.js-cookie-consent.cookie-consent,
 a.job-list-item .date,
 a.job-list-item .organisation,
 a.job-list-item .sub {
@@ -8598,8 +8599,7 @@ a.job-list-item {
 }
 
 .pt-2,
-.py-2,
-.js-cookie-consent.cookie-consent {
+.py-2 {
   padding-top: 0.5rem !important;
 }
 
@@ -8609,8 +8609,7 @@ a.job-list-item {
 }
 
 .pb-2,
-.py-2,
-.js-cookie-consent.cookie-consent {
+.py-2 {
   padding-bottom: 0.5rem !important;
 }
 
@@ -8624,7 +8623,8 @@ a.job-list-item {
 }
 
 .pt-3,
-.py-3 {
+.py-3,
+.js-cookie-consent.cookie-consent {
   padding-top: 1rem !important;
 }
 
@@ -8635,7 +8635,8 @@ a.job-list-item {
 }
 
 .pb-3,
-.py-3 {
+.py-3,
+.js-cookie-consent.cookie-consent {
   padding-bottom: 1rem !important;
 }
 
@@ -11163,6 +11164,12 @@ footer a {
 footer a:hover {
   text-decoration: none;
   color: #000;
+}
+
+.js-cookie-consent.cookie-consent {
+  position: fixed;
+  bottom: 0;
+  box-shadow: 0 0 0 10000px rgba(0, 0, 0, 0.5);
 }
 
 .js-cookie-consent.cookie-consent button {

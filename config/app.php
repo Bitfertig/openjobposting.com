@@ -85,6 +85,7 @@ return [
     'available_locales' => [
         'en' => 'en',
         'de' => 'de',
+        'ru' => 'ru',
         'zh_CN' => 'zh'
     ],
 
