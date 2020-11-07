@@ -34,12 +34,12 @@ $site_description = 'A platform to offer jobs online. Jobs will be also presente
     @if( App::Environment() !== 'local' )
     @if( isset($_COOKIE['laravel_cookie_consent']) && $_COOKIE['laravel_cookie_consent'] == 1 )
     <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-GR9F8B28FL"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-6WH8GBLTZP"></script>
     <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-    gtag('config', 'G-GR9F8B28FL', { 'anonymize_ip': true });
+    gtag('config', 'G-6WH8GBLTZP', { 'anonymize_ip': true });
     </script>
     @endif
     @endif
