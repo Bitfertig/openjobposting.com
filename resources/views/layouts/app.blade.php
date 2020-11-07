@@ -41,6 +41,8 @@ $site_description = 'A platform to offer jobs online. Jobs will be also presente
     gtag('js', new Date());
     gtag('config', 'G-6WH8GBLTZP', { 'anonymize_ip': true });
     </script>
+
+    <script data-ad-client="ca-pub-3809977409157715" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
     @endif
     @endif
 </head>
