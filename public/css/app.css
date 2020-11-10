@@ -8342,10 +8342,10 @@ a.job-list-item .sub,
 }
 
 .w-100,
-.js-cookie-consent.cookie-consent,
 a.job-list-item .date,
 a.job-list-item .organisation,
-a.job-list-item .sub {
+a.job-list-item .sub,
+.js-cookie-consent.cookie-consent {
   width: 100% !important;
 }
 
@@ -10619,8 +10619,8 @@ a.job-list-item .date {
 }
 
 .text-center,
-.js-cookie-consent.cookie-consent,
-a.job-list-item .title {
+a.job-list-item .title,
+.js-cookie-consent.cookie-consent {
   text-align: center !important;
 }
 
@@ -10936,16 +10936,32 @@ a.text-dark:focus {
   }
 }
 
+:root {
+  --color-action: #eee40a;
+  --color-subtle: #3f6184;
+  --color-subtle-darker: #265281;
+}
+
 html {
   font-size: 14px;
 }
 
-:root {
-  --col-action: #0f72ba;
+body {
+  background-color: #ebebeb;
 }
 
 body {
-  background-color: #ebebeb;
+  height: 100vh;
+}
+
+.stickyfooter {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+.stickyfooter > .stickyfooter-content {
+  flex: 1;
 }
 
 .navbar-light .navbar-toggler {
@@ -10954,6 +10970,57 @@ body {
 
 .navbar button:focus {
   outline: 0px none;
+}
+
+.navbar-wrap {
+  width: 100%;
+  height: 0;
+}
+
+.navbar-wrap .navbar-bg {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 100px;
+}
+
+.navbar-wrap .navbar-bg::after {
+  position: absolute;
+  content: "";
+  width: 500%;
+  height: 500%;
+  bottom: 0px;
+  left: 0px;
+  background-color: #212c4a;
+  background: #212c4a radial-gradient(circle, white 0%, rgba(255, 255, 255, 0) 100%) repeat scroll 0% 0% !important;
+}
+
+nav.navbar {
+  height: 100px !important;
+}
+
+nav.navbar a.nav-link:not(.btn) {
+  color: white;
+}
+
+nav.navbar a.nav-link:not(.btn):hover {
+  color: rgba(255, 255, 255, 0.7);
+  text-shadow: 1px 1px rgba(0, 0, 0, 0.25);
+}
+
+nav .navbar-brand {
+  font-weight: bold;
+  font-size: 1.9em;
+  letter-spacing: 0.04em;
+  color: var(--color-action);
+}
+
+nav .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%280, 0, 0, 0.5%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+nav .dropdown-menu.dropdown-menu-right {
+  border: 0 none;
 }
 
 .jobsearch label {
@@ -11010,61 +11077,34 @@ body {
   justify-content: center;
 }
 
-:root {
-  --color-action: #eee40a;
-  --color-subtle: #3f6184;
-  --color-subtle-darker: #265281;
+footer a {
+  color: #999;
+  text-decoration: none;
+  transition: all 0.3s;
 }
 
-.navbar-wrap {
-  width: 100%;
-  height: 0;
+footer a:hover {
+  text-decoration: none;
+  color: #000;
 }
 
-.navbar-wrap .navbar-bg {
-  position: relative;
-  overflow: hidden;
-  width: 100%;
-  height: 100px;
+.js-cookie-consent.cookie-consent {
+  position: fixed;
+  bottom: 0;
+  box-shadow: 0 0 0 10000px rgba(0, 0, 0, 0.5);
 }
 
-.navbar-wrap .navbar-bg::after {
-  position: absolute;
-  content: "";
-  width: 500%;
-  height: 500%;
-  bottom: 0px;
-  left: 0px;
-  background-color: #212c4a;
-  background: #212c4a radial-gradient(circle, white 0%, rgba(255, 255, 255, 0) 100%) repeat scroll 0% 0% !important;
-}
-
-nav.navbar {
-  height: 100px !important;
-}
-
-nav.navbar a.nav-link:not(.btn) {
-  color: white;
-}
-
-nav.navbar a.nav-link:not(.btn):hover {
-  color: rgba(255, 255, 255, 0.7);
-  text-shadow: 1px 1px rgba(0, 0, 0, 0.25);
-}
-
-nav .navbar-brand {
-  font-weight: bold;
-  font-size: 1.9em;
-  letter-spacing: 0.04em;
-  color: var(--color-action);
-}
-
-nav .navbar-toggler-icon {
-  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%280, 0, 0, 0.5%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
-}
-
-nav .dropdown-menu.dropdown-menu-right {
+.js-cookie-consent.cookie-consent button {
   border: 0 none;
+  background-color: var(--color-subtle);
+  color: white;
+  border-radius: 5px;
+  padding: 5px 10px;
+  transition: all 0.3s;
+}
+
+.js-cookie-consent.cookie-consent button:hover {
+  background-color: var(--color-subtle-darker);
 }
 
 .head {
@@ -11153,35 +11193,5 @@ a.btn-gear:hover {
 
 table thead {
   background-color: var(--color-action);
-}
-
-footer a {
-  color: #999;
-  text-decoration: none;
-  transition: all 0.3s;
-}
-
-footer a:hover {
-  text-decoration: none;
-  color: #000;
-}
-
-.js-cookie-consent.cookie-consent {
-  position: fixed;
-  bottom: 0;
-  box-shadow: 0 0 0 10000px rgba(0, 0, 0, 0.5);
-}
-
-.js-cookie-consent.cookie-consent button {
-  border: 0 none;
-  background-color: var(--color-subtle);
-  color: white;
-  border-radius: 5px;
-  padding: 5px 10px;
-  transition: all 0.3s;
-}
-
-.js-cookie-consent.cookie-consent button:hover {
-  background-color: var(--color-subtle-darker);
 }
 

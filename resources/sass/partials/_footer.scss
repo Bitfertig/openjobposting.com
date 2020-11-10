@@ -1,0 +1,12 @@
+
+footer {
+    a {
+        color: #999;
+        text-decoration: none;
+        transition: all 0.3s;
+        &:hover {
+            text-decoration: none;
+            color: #000;
+        }
+    }
+}

@@ -47,9 +47,9 @@ $site_description = 'A platform to offer jobs online. Jobs will be also presente
     @endif
 </head>
 <body>
-<div id="app">
+<div id="app" class="stickyfooter">
     @include('partials.navbar')
-    <main>
+    <main class="stickyfooter-content">
         @yield('content')
     </main>
     @include('partials.footer')

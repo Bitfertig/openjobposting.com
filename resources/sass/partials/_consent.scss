@@ -1,0 +1,19 @@
+
+
+.js-cookie-consent.cookie-consent {
+    @extend .text-center, .bg-warning, .py-3, .px-3, .w-100;
+    position: fixed;
+    bottom: 0;
+    box-shadow: 0 0 0 10000px rgba(0,0,0, 0.5);
+    button {
+        border: 0 none;
+        background-color: var(--color-subtle);
+        color: white;
+        border-radius: 5px;
+        padding: 5px 10px;
+        transition: all 0.3s;
+        &:hover {
+            background-color: var(--color-subtle-darker);
+        }
+    }
+}

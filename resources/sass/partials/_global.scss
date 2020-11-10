@@ -1,10 +1,20 @@
-:root {
-    --col-action: #0f72ba;
-}
 
 
 body {
     background-color: #ebebeb;
+}
+
+// Sticky Footer
+body {
+    height: 100vh;
+}
+.stickyfooter {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    & > .stickyfooter-content {
+        flex: 1;
+    }
 }
 
 
