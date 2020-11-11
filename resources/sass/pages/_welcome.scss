@@ -1,0 +1,24 @@
+.head {
+    @extend .bg-info, .mb-5, .d-flex, .align-items-center, .justify-content-center;
+    height: 250px;
+    background-color: var(--color-action);
+    background-image: url(../../../public/img/head.jpg);
+    background-size: cover;
+    background-position: top center;
+    color: white;
+    font-size: 1.5em;
+    font-weight: bold;
+    text-shadow: 1px 1px black, 2px 2px #3f6184;
+    letter-spacing: 0.05em;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+@media screen and (min-width: 900px) {
+    .head {
+        height: 400px;
+    }
+}
+@media screen and (min-width: 1200px) {
+    .head {
+        height: 600px;
+    }
+}

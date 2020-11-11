@@ -7199,6 +7199,7 @@ button.bg-dark:focus {
 }
 
 .d-block,
+.a-box,
 a.job-list-item {
   display: block !important;
 }
@@ -8624,6 +8625,7 @@ a.job-list-item {
 
 .pt-3,
 .py-3,
+.a-box,
 .js-cookie-consent.cookie-consent {
   padding-top: 1rem !important;
 }
@@ -8636,6 +8638,7 @@ a.job-list-item {
 
 .pb-3,
 .py-3,
+.a-box,
 .js-cookie-consent.cookie-consent {
   padding-bottom: 1rem !important;
 }
@@ -8657,7 +8660,8 @@ a.job-list-item {
 }
 
 .pr-4,
-.px-4 {
+.px-4,
+.a-box {
   padding-right: 1.5rem !important;
 }
 
@@ -8667,7 +8671,8 @@ a.job-list-item {
 }
 
 .pl-4,
-.px-4 {
+.px-4,
+.a-box {
   padding-left: 1.5rem !important;
 }
 
@@ -10619,6 +10624,7 @@ a.job-list-item .date {
 }
 
 .text-center,
+.a-box,
 a.job-list-item .title,
 .js-cookie-consent.cookie-consent {
   text-align: center !important;
@@ -11031,8 +11037,13 @@ nav .dropdown-menu.dropdown-menu-right {
   transition: all 0.2s;
 }
 
-.jobsearch label:hover .jobsearch-icon {
-  color: #ececec;
+.jobsearch label .jobsearch-icon {
+  transition: all 0.2s;
+}
+
+.jobsearch label:hover .jobsearch-icon,
+.jobsearch label:focus .jobsearch-icon {
+  color: #c4c3c3;
 }
 
 .jobsearch label:hover .jobsearch-button {
@@ -11193,5 +11204,20 @@ a.btn-gear:hover {
 
 table thead {
   background-color: var(--color-action);
+}
+
+.a-box {
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 4px;
+  font-size: 18px;
+  text-decoration: none;
+  color: grey;
+  transition: all 0.2s;
+}
+
+.a-box:hover {
+  background-color: rgba(255, 255, 255, 0.9);
+  text-decoration: none;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
 }
 

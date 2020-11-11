@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Models\Job;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 
 class DashboardController extends Controller
@@ -18,9 +19,37 @@ class DashboardController extends Controller
     {
         $users_count = User::count();
         $jobs_count = Job::count();
+
+        $users_chart = DB::select(
+            DB::raw("
+                SELECT
+                    DATE_FORMAT(users.created_at, '%Y-%m') AS yearmonth,
+                    COUNT(users.id) AS total,
+                    (SELECT COUNT(*) FROM `users` WHERE DATE_FORMAT(users.created_at, '%Y-%m') <= yearmonth) AS sum
+                FROM users
+                GROUP BY yearmonth
+                ORDER BY yearmonth DESC
+            ")
+        );
+        #dd($users_chart);
+
+        $jobs_chart = DB::select(
+            DB::raw("
+                SELECT
+                    DATE_FORMAT(jobs.created_at, '%Y-%m') AS yearmonth,
+                    COUNT(jobs.id) AS total,
+                    (SELECT COUNT(*) FROM `jobs` WHERE DATE_FORMAT(jobs.created_at, '%Y-%m') <= yearmonth) AS sum
+                FROM jobs
+                GROUP BY yearmonth
+                ORDER BY yearmonth DESC
+            ")
+        );
+
         return view('admin.dashboard.index', [
             'users_count' => $users_count,
             'jobs_count' => $jobs_count,
+            'users_chart' => $users_chart,
+            'jobs_chart' => $jobs_chart,
         ]);
     }
 

@@ -7,10 +7,16 @@
 
         transition: all 0.2s;
 
-        &:hover {
+        .jobsearch-icon {
+            transition: all 0.2s;
+        }
+
+        &:hover, &:focus {
             .jobsearch-icon {
-                color: #ececec;
+                color: #c4c3c3;
             }
+        }
+        &:hover {
             .jobsearch-button {
                 color: var(--color-subtle-darker);
             }

@@ -19,7 +19,7 @@
                 <tr>
                     <td>{{ $user->id }}</td>
                     <td>{{ $user->lastname }}, {{ $user->firstname }}</td>
-                    <td></td>
+                    <td>{{ $user->jobs->count() }}</td>
                     <td></td>
                 </tr>
             @endforeach

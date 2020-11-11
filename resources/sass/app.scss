@@ -4,15 +4,12 @@
 // https://fonts.google.com/specimen/Source+Sans+Pro#standard-styles
 //@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200&display=swap');
 
-// Variables
-@import 'variables';
-
 // Bootstrap
+@import 'variables';
 @import '~bootstrap/scss/bootstrap';
 
 
 :root {
-    //--col-action: #0f72ba;
     --color-action: #eee40a;
     --color-subtle: #3f6184;
     --color-subtle-darker: #265281;
@@ -27,33 +24,9 @@ html { font-size: 14px; }
 @import 'partials/footer';
 @import 'partials/consent';
 
+@import 'pages/welcome';
 
 
-
-.head {
-    @extend .bg-info, .mb-5, .d-flex, .align-items-center, .justify-content-center;
-    height: 250px;
-    background-color: var(--color-action);
-    background-image: url(../../public/img/head.jpg);
-    background-size: cover;
-    background-position: top center;
-    color: white;
-    font-size: 1.5em;
-    font-weight: bold;
-    text-shadow: 1px 1px black, 2px 2px #3f6184;
-    letter-spacing: 0.05em;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-}
-@media screen and (min-width: 900px) {
-    .head {
-        height: 400px;
-    }
-}
-@media screen and (min-width: 1200px) {
-    .head {
-        height: 600px;
-    }
-}
 
 
 .btn-jsf {
@@ -139,4 +112,18 @@ table thead {
     background-color: var(--color-action);
 }
 
+.a-box {
+    background-color: rgba(255,255,255, 0.7);
+    border-radius: 4px;
+    @extend .d-block, .py-3, .px-4, .text-center;
+    font-size: 18px;
+    text-decoration: none;
+    color: grey;
+    transition: all 0.2s;
 
+    &:hover {
+        background-color: rgba(255,255,255, 0.9);
+        text-decoration: none;
+        box-shadow: 0 0 10px 0 rgba(0,0,0, 0.1);
+    }
+}
