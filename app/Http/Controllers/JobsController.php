@@ -64,7 +64,7 @@ class JobsController extends Controller
     public function show(Request $request, $locale, Job $job)
     {
         $job->description_html = markdown_to_html($job->description);
-        $job = $job;
+
         return view('pages.jobs.show', [
             'job' => $job
         ]);

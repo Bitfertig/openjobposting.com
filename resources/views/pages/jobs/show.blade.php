@@ -13,7 +13,7 @@
                 @endif
             </div>
 
-            <div>{{ $job->description_html }}</div>
+            <div>{!! $job->description_html !!}</div>
 
 
         </div>
@@ -64,7 +64,7 @@ $sjp = new SchemaJobposting();
 $sjp->set('datePosted', $job->date_posted->format('Y-m-d'));
 $sjp->set('validThrough', $job->valid_through->format('Y-m-d'));
 $sjp->set('title', $job->title);
-$sjp->set('description', $job->description);
+$sjp->set('description', $job->description_html);
 $sjp->set('employmentType', [$job->employment_type]); // FULL_TIME, PART_TIME, contract, temporary, seasonal, internship
 $sjp->set('hiringOrganization.name', $job->organization_name);
 if ( !empty($job->organization_url) ) $sjp->set('hiringOrganization.sameAs', $job->organization_url);

@@ -56,7 +56,7 @@ if ( !function_exists('markdown_to_html') ) {
     function markdown_to_html($text = null)
     {
         $text = (String) ($text ?? '');
-        return Markdown::parse($text);
+        return Markdown::parse($text)->toHtml();
     }
 }
 
