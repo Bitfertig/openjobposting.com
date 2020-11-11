@@ -10,6 +10,11 @@
             <form method="POST" action="{{ route('register', app()->getLocale()) }}">
                 @csrf
 
+                <div class="dcaptcha">
+                    <input type="text" name="name1" value="">
+                    <input type="text" name="name2" value="filled">
+                </div>
+
                 <div class="form-group row">
                     <label for="firstname" class="col-md-4 col-form-label text-md-right">{{ __('Firstname') }}</label>
                     <div class="col-md-6">

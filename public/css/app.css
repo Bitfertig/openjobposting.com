@@ -10978,6 +10978,10 @@ body {
   outline: 0px none;
 }
 
+.dcaptcha {
+  display: none;
+}
+
 .navbar-wrap {
   width: 100%;
   height: 0;
