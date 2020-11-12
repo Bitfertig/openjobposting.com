@@ -11148,6 +11148,269 @@ footer a:hover {
   }
 }
 
+#socials {
+  overflow-x: hidden;
+}
+
+#socials > .inner {
+  margin-top: 140px;
+  margin-bottom: 140px;
+  position: relative;
+}
+
+#socials > .inner > .bubbles {
+  overflow-x: hidden;
+}
+
+#socials > .inner > .bubbles > .inner {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+}
+
+#socials > .inner > .bubbles > .inner > .bubble {
+  background-color: rgba(255, 0, 0, 0.4);
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  position: absolute;
+}
+
+#socials > .inner > .bubbles > .inner > .bubble-1 {
+  opacity: 0.07;
+  left: 78vw;
+  top: 32%;
+  transform: translate(0, 0) scale(2);
+}
+
+#socials > .inner > .bubbles > .inner > .bubble-2 {
+  opacity: 0.91;
+  left: 36vw;
+  top: 20%;
+  transform: translate(0, 0) scale(4);
+}
+
+#socials > .inner > .bubbles > .inner > .bubble-3 {
+  opacity: 0.05;
+  left: 51vw;
+  top: 55%;
+  transform: translate(0, 0) scale(2);
+}
+
+#socials > .inner > .bubbles > .inner > .bubble-4 {
+  opacity: 0.61;
+  left: 19vw;
+  top: 81%;
+  transform: translate(0, 0) scale(5);
+}
+
+#socials > .inner > .bubbles > .inner > .bubble-5 {
+  opacity: 0.12;
+  left: 21vw;
+  top: 94%;
+  transform: translate(0, 0) scale(4);
+}
+
+#socials > .inner > .bubbles > .inner > .bubble-6 {
+  opacity: 0.03;
+  left: 64vw;
+  top: 43%;
+  transform: translate(0, 0) scale(6);
+}
+
+#socials > .inner > .bubbles > .inner > .bubble-7 {
+  opacity: 0.23;
+  left: 6vw;
+  top: 36%;
+  transform: translate(0, 0) scale(5);
+}
+
+#socials > .inner > .bubbles > .inner > .bubble-8 {
+  opacity: 0.34;
+  left: 63vw;
+  top: 93%;
+  transform: translate(0, 0) scale(3);
+}
+
+#socials > .inner > .bubbles > .inner > .bubble-9 {
+  opacity: 0.21;
+  left: 64vw;
+  top: 41%;
+  transform: translate(0, 0) scale(4);
+}
+
+#socials > .inner > .bubbles > .inner > .bubble-10 {
+  opacity: 0.05;
+  left: 91vw;
+  top: 93%;
+  transform: translate(0, 0) scale(3);
+}
+
+#socials > .inner > .bubbles > .inner > .bubble-11 {
+  opacity: 0.03;
+  left: 5vw;
+  top: 11%;
+  transform: translate(0, 0) scale(2);
+}
+
+#socials > .inner > .bubbles > .inner > .bubble-12 {
+  opacity: 0.25;
+  left: 93vw;
+  top: 20%;
+  transform: translate(0, 0) scale(4);
+}
+
+#socials > .inner > .bubbles > .inner > .bubble-13 {
+  opacity: 0.43;
+  left: 37vw;
+  top: 13%;
+  transform: translate(0, 0) scale(6);
+}
+
+#socials > .inner > .bubbles > .inner > .bubble-14 {
+  opacity: 0.13;
+  left: 72vw;
+  top: 39%;
+  transform: translate(0, 0) scale(6);
+}
+
+#socials > .inner > .bubbles > .inner > .bubble-15 {
+  opacity: 0.95;
+  left: 99vw;
+  top: 67%;
+  transform: translate(0, 0) scale(6);
+}
+
+#socials > .inner > .bubbles > .inner > .bubble-16 {
+  opacity: 0.65;
+  left: 35vw;
+  top: 65%;
+  transform: translate(0, 0) scale(4);
+}
+
+#socials > .inner > .bubbles > .inner > .bubble-17 {
+  opacity: 0.03;
+  left: 60vw;
+  top: 56%;
+  transform: translate(0, 0) scale(2);
+}
+
+#socials > .inner > .bubbles > .inner > .bubble-18 {
+  opacity: 0.63;
+  left: 48vw;
+  top: 26%;
+  transform: translate(0, 0) scale(3);
+}
+
+#socials > .inner > .bubbles > .inner > .bubble-19 {
+  opacity: 0.36;
+  left: 2vw;
+  top: 29%;
+  transform: translate(0, 0) scale(4);
+}
+
+#socials > .inner > .bubbles > .inner > .bubble-20 {
+  opacity: 0.55;
+  left: 17vw;
+  top: 20%;
+  transform: translate(0, 0) scale(2);
+}
+
+#socials > .inner > .bubbles > .inner > .bubble-21 {
+  opacity: 0.38;
+  left: 18vw;
+  top: 37%;
+  transform: translate(0, 0) scale(4);
+}
+
+#socials > .inner > .bubbles > .inner > .bubble-22 {
+  opacity: 0.88;
+  left: 50vw;
+  top: 41%;
+  transform: translate(0, 0) scale(2);
+}
+
+#socials > .inner > .bubbles > .inner > .bubble-23 {
+  opacity: 0.72;
+  left: 88vw;
+  top: 15%;
+  transform: translate(0, 0) scale(5);
+}
+
+#socials > .inner > .bubbles > .inner > .bubble-24 {
+  opacity: 0.76;
+  left: 43vw;
+  top: 34%;
+  transform: translate(0, 0) scale(5);
+}
+
+#socials > .inner > .bubbles > .inner > .bubble-25 {
+  opacity: 0.44;
+  left: 87vw;
+  top: 6%;
+  transform: translate(0, 0) scale(2);
+}
+
+#socials > .inner > .bubbles > .inner > .bubble-26 {
+  opacity: 0.9;
+  left: 6vw;
+  top: 77%;
+  transform: translate(0, 0) scale(2);
+}
+
+#socials > .inner > .bubbles > .inner > .bubble-27 {
+  opacity: 0.09;
+  left: 98vw;
+  top: 4%;
+  transform: translate(0, 0) scale(5);
+}
+
+#socials > .inner > .bubbles > .inner > .bubble-28 {
+  opacity: 0.25;
+  left: 46vw;
+  top: 61%;
+  transform: translate(0, 0) scale(6);
+}
+
+#socials > .inner > .bubbles > .inner > .bubble-29 {
+  opacity: 0.18;
+  left: 7vw;
+  top: 49%;
+  transform: translate(0, 0) scale(2);
+}
+
+#socials > .inner > .bubbles > .inner > .bubble-30 {
+  opacity: 0.31;
+  left: 31vw;
+  top: 15%;
+  transform: translate(0, 0) scale(4);
+}
+
+#socials > .inner .links {
+  display: flex;
+  min-height: 100px;
+  justify-content: center;
+  align-items: center;
+}
+
+#socials > .inner .links a {
+  display: inline-block;
+  margin: 5px;
+  color: black;
+  transition: all 0.2s;
+  opacity: 0.7;
+}
+
+#socials > .inner .links a:hover {
+  opacity: 1;
+}
+
 .btn-jsf {
   border-radius: 5px;
   background-color: rgba(255, 255, 255, 0.1);
