@@ -43,6 +43,10 @@ Route::group([
 
     Route::resource('documentations', App\Http\Controllers\DocumentationsController::class);
 
+    Route::resource('account', App\Http\Controllers\AccountController::class);
+    Route::get('/account/edit/password', [App\Http\Controllers\AccountController::class, 'edit_password'])->name('account.edit_password');
+    Route::patch('/account/update/password', [App\Http\Controllers\AccountController::class, 'update_password'])->name('account.update_password');
+
     Route::resource('jobs', App\Http\Controllers\JobsController::class);
     Route::get('/jobs/{job}/delete', [App\Http\Controllers\JobsController::class, 'delete'])->name('jobs.delete');
 

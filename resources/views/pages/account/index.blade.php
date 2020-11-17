@@ -5,7 +5,12 @@
 
     <h1>Account</h1>
 
-    <div></div>
+    <div>
+        Name: {{ $user->lastname }}, {{ $user->firstname }}<br>
+        E-Mail: {{ $user->email }}
+    </div>
+
+    <a href="{{ route('account.edit_password', app()->getLocale()) }}">{{ __('Password change') }}</a>
 
 </div>
 @endsection

@@ -59,6 +59,10 @@
 
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
 
+                            <a class="dropdown-item" href="{{ route('account.index', app()->getLocale()) }}">
+                                {{ __('Account') }}
+                            </a>
+
                             @role('developer|admin')
                                 <a class="dropdown-item" href="{{ route('admin.dashboard.index', app()->getLocale()) }}">
                                     {{ __('Admin') }}
