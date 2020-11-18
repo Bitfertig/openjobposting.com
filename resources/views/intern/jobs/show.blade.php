@@ -47,12 +47,10 @@
                 {{ $job->unit }}
             </div> --}}
 
-            @if( !empty($job->valid_through) )
-                <div class="job-data">
-                    <h2>Until</h2>
-                    {{ $job->valid_through->format('d.m.Y') }}
-                </div>
-            @endif
+            <div class="job-data">
+                <h2>Until</h2>
+                {{ $job->valid_through->format('d.m.Y') }}
+            </div>
 
 
         </div>
@@ -63,11 +61,11 @@
 @section('scripts')
 <?php
 $sjp = new SchemaJobposting();
-if ( $job->date_posted ) $sjp->set('datePosted', $job->date_posted->format('Y-m-d'));
-if ( $job->valid_through ) $sjp->set('validThrough', $job->valid_through->format('Y-m-d'));
+$sjp->set('datePosted', $job->date_posted->format('Y-m-d'));
+$sjp->set('validThrough', $job->valid_through->format('Y-m-d'));
 $sjp->set('title', $job->title);
 $sjp->set('description', $job->description_html);
-$sjp->set('employmentType', [ $job->employment_type ]); // FULL_TIME, PART_TIME, contract, temporary, seasonal, internship
+$sjp->set('employmentType', [$job->employment_type]); // FULL_TIME, PART_TIME, contract, temporary, seasonal, internship
 $sjp->set('hiringOrganization.name', $job->organization_name);
 if ( !empty($job->organization_url) ) $sjp->set('hiringOrganization.sameAs', $job->organization_url);
 #$sjp->set('hiringOrganization.logo', '');

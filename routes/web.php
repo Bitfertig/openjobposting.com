@@ -48,18 +48,23 @@ Route::group([
     Route::patch('/account/update/password', [App\Http\Controllers\AccountController::class, 'update_password'])->name('account.update_password');
 
     Route::resource('jobs', App\Http\Controllers\JobsController::class);
-    Route::get('/jobs/{job}/delete', [App\Http\Controllers\JobsController::class, 'delete'])->name('jobs.delete');
 
+    // Intern
     Route::group([
-        'prefix' => 'admin',
+        'prefix' => 'intern',
+        'as' => 'intern.',
         'middleware' => [
             'auth',
         ],
     ], function() {
-        $locale = \App::getLocale();
+        #$locale = \App::getLocale();
+
+        Route::resource('jobs', App\Http\Controllers\Intern\JobsController::class);
+        Route::get('/jobs/{job}/delete', [App\Http\Controllers\Intern\JobsController::class, 'delete'])->name('jobs.delete');
 
     });
 
+    // Admin
     Route::group([
         'prefix' => 'admin',
         'as' => 'admin.',

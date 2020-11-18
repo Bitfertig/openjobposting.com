@@ -7,7 +7,7 @@
     <h1 class="my-4">{{ __('Job delete') }}</h1>
 
 
-    <form method="POST" action="{{ route('jobs.update', [app()->getLocale(), $job->id]) }}">
+    <form method="POST" action="{{ route('intern.jobs.update', [app()->getLocale(), $job->id]) }}">
         @method('DELETE')
         @csrf
 
@@ -19,7 +19,7 @@
                 </p>
 
                 <div class="form-group">
-                    <a href="{{ route('jobs.index', [app()->getLocale()]) }}" class="btn btn-secondary">{{ __('Cancel') }}</a>
+                    <a href="{{ route('intern.jobs.index', [app()->getLocale()]) }}" class="btn btn-secondary">{{ __('Cancel') }}</a>
                     <input type="submit" class="btn btn-danger" value="Delete">
                 </div>
 

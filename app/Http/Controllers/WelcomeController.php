@@ -14,12 +14,9 @@ class WelcomeController extends Controller
      */
     public function index(Request $request)
     {
-        $q = $request->q ?? '';
-
-        $jobs = Job::where('title','LIKE','%'.$q.'%')->simplePaginate(15);
+        $jobs = Job::all()->random(10);
 
         return view('welcome', [
-            'q' => $request->q,
             'jobs' => $jobs,
         ]);
     }

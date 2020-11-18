@@ -23,7 +23,7 @@
 
                 @else
                     <li class="nav-item mr-3">
-                        <a class="nav-link btn btn-jsf" href="{{ route('jobs.index', app()->getLocale()) }}">{{ __('My job offerings') }}</a>
+                        <a class="nav-link btn btn-jsf" href="{{ route('intern.jobs.index', app()->getLocale()) }}">{{ __('My job offerings') }}</a>
                     </li>
                 @endguest
 

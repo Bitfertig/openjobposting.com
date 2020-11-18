@@ -38,7 +38,7 @@ $jobform = [
     @endif
 
 
-    <form method="POST" action="{{ !$job->exists ? route('jobs.store', app()->getLocale()) : route('jobs.update', [app()->getLocale(), $job->id]) }}" enctype="multipart/form-data">
+    <form method="POST" action="{{ !$job->exists ? route('intern.jobs.store', app()->getLocale()) : route('intern.jobs.update', [app()->getLocale(), $job->id]) }}" enctype="multipart/form-data">
         @if( $job->exists )
             @method('PATCH')
         @endif
@@ -181,7 +181,7 @@ $jobform = [
 
             <div class="col col-md-12">
                 <div class="form-group">
-                    <a class="btn btn-secondary" href="{{ route('jobs.index', app()->getLocale()) }}">Cancel</a>
+                    <a class="btn btn-secondary" href="{{ route('intern.jobs.index', app()->getLocale()) }}">Cancel</a>
                     <input type="submit" class="btn btn-primary" value="Publish">
                 </div>
             </div>
