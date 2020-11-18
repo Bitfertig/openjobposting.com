@@ -6987,19 +6987,14 @@ button.bg-success:focus {
   background-color: #2d995b !important;
 }
 
-.bg-info,
-.head {
+.bg-info {
   background-color: #6cb2eb !important;
 }
 
 a.bg-info:hover,
-a.head:hover,
 a.bg-info:focus,
-a.head:focus,
 button.bg-info:hover,
-button.head:hover,
-button.bg-info:focus,
-button.head:focus {
+button.bg-info:focus {
   background-color: #3f9ae5 !important;
 }
 
@@ -7218,7 +7213,7 @@ a.job-list-item {
 
 .d-flex,
 a.job-list-item .sub,
-.head {
+.lead {
   display: flex !important;
 }
 
@@ -7516,7 +7511,7 @@ a.job-list-item .sub,
 }
 
 .justify-content-center,
-.head {
+.lead {
   justify-content: center !important;
 }
 
@@ -7537,7 +7532,7 @@ a.job-list-item .sub,
 }
 
 .align-items-center,
-.head {
+.lead {
   align-items: center !important;
 }
 
@@ -8536,7 +8531,7 @@ a.job-list-item {
 }
 
 .mb-5,
-.head,
+.lead,
 .my-5 {
   margin-bottom: 3rem !important;
 }
@@ -11122,7 +11117,7 @@ footer a:hover {
   background-color: var(--color-subtle-darker);
 }
 
-.head {
+.lead {
   height: 250px;
   background-color: var(--color-action);
   background-image: url(/images/head.jpg?06770362140804c1c47a1d6a7ff2828b);
@@ -11137,13 +11132,13 @@ footer a:hover {
 }
 
 @media screen and (min-width: 900px) {
-  .head {
+  .lead {
     height: 400px;
   }
 }
 
 @media screen and (min-width: 1200px) {
-  .head {
+  .lead {
     height: 600px;
   }
 }
@@ -11183,213 +11178,213 @@ footer a:hover {
 }
 
 #socials > .inner > .bubbles > .inner > .bubble-1 {
-  opacity: 0.07;
-  left: 78vw;
-  top: 32%;
-  transform: translate(0, 0) scale(2);
+  opacity: 0.64;
+  left: 85vw;
+  top: 66%;
+  transform: translate(0, 0) scale(4);
 }
 
 #socials > .inner > .bubbles > .inner > .bubble-2 {
-  opacity: 0.91;
-  left: 36vw;
-  top: 20%;
-  transform: translate(0, 0) scale(4);
+  opacity: 0.5;
+  left: 90vw;
+  top: 40%;
+  transform: translate(0, 0) scale(3);
 }
 
 #socials > .inner > .bubbles > .inner > .bubble-3 {
-  opacity: 0.05;
-  left: 51vw;
-  top: 55%;
-  transform: translate(0, 0) scale(2);
-}
-
-#socials > .inner > .bubbles > .inner > .bubble-4 {
-  opacity: 0.61;
-  left: 19vw;
-  top: 81%;
+  opacity: 0.16;
+  left: 7vw;
+  top: 33%;
   transform: translate(0, 0) scale(5);
 }
 
+#socials > .inner > .bubbles > .inner > .bubble-4 {
+  opacity: 0.53;
+  left: 90vw;
+  top: 63%;
+  transform: translate(0, 0) scale(2);
+}
+
 #socials > .inner > .bubbles > .inner > .bubble-5 {
-  opacity: 0.12;
-  left: 21vw;
-  top: 94%;
-  transform: translate(0, 0) scale(4);
+  opacity: 0.48;
+  left: 47vw;
+  top: 31%;
+  transform: translate(0, 0) scale(3);
 }
 
 #socials > .inner > .bubbles > .inner > .bubble-6 {
-  opacity: 0.03;
-  left: 64vw;
+  opacity: 0.05;
+  left: 20vw;
   top: 43%;
   transform: translate(0, 0) scale(6);
 }
 
 #socials > .inner > .bubbles > .inner > .bubble-7 {
-  opacity: 0.23;
-  left: 6vw;
-  top: 36%;
-  transform: translate(0, 0) scale(5);
+  opacity: 0.48;
+  left: 26vw;
+  top: 12%;
+  transform: translate(0, 0) scale(6);
 }
 
 #socials > .inner > .bubbles > .inner > .bubble-8 {
-  opacity: 0.34;
-  left: 63vw;
-  top: 93%;
-  transform: translate(0, 0) scale(3);
+  opacity: 0.25;
+  left: 24vw;
+  top: 79%;
+  transform: translate(0, 0) scale(6);
 }
 
 #socials > .inner > .bubbles > .inner > .bubble-9 {
-  opacity: 0.21;
-  left: 64vw;
-  top: 41%;
-  transform: translate(0, 0) scale(4);
+  opacity: 0.44;
+  left: 44vw;
+  top: 44%;
+  transform: translate(0, 0) scale(6);
 }
 
 #socials > .inner > .bubbles > .inner > .bubble-10 {
-  opacity: 0.05;
-  left: 91vw;
-  top: 93%;
-  transform: translate(0, 0) scale(3);
+  opacity: 0.15;
+  left: 72vw;
+  top: 27%;
+  transform: translate(0, 0) scale(4);
 }
 
 #socials > .inner > .bubbles > .inner > .bubble-11 {
-  opacity: 0.03;
-  left: 5vw;
-  top: 11%;
+  opacity: 0.6;
+  left: 99vw;
+  top: 9%;
   transform: translate(0, 0) scale(2);
 }
 
 #socials > .inner > .bubbles > .inner > .bubble-12 {
-  opacity: 0.25;
-  left: 93vw;
-  top: 20%;
-  transform: translate(0, 0) scale(4);
+  opacity: 0.88;
+  left: 1vw;
+  top: 88%;
+  transform: translate(0, 0) scale(6);
 }
 
 #socials > .inner > .bubbles > .inner > .bubble-13 {
-  opacity: 0.43;
-  left: 37vw;
-  top: 13%;
-  transform: translate(0, 0) scale(6);
+  opacity: 0.4;
+  left: 75vw;
+  top: 61%;
+  transform: translate(0, 0) scale(5);
 }
 
 #socials > .inner > .bubbles > .inner > .bubble-14 {
-  opacity: 0.13;
-  left: 72vw;
-  top: 39%;
-  transform: translate(0, 0) scale(6);
+  opacity: 0.2;
+  left: 93vw;
+  top: 55%;
+  transform: translate(0, 0) scale(4);
 }
 
 #socials > .inner > .bubbles > .inner > .bubble-15 {
-  opacity: 0.95;
-  left: 99vw;
-  top: 67%;
+  opacity: 0.25;
+  left: 93vw;
+  top: 20%;
   transform: translate(0, 0) scale(6);
 }
 
 #socials > .inner > .bubbles > .inner > .bubble-16 {
-  opacity: 0.65;
-  left: 35vw;
-  top: 65%;
+  opacity: 0.7;
+  left: 48vw;
+  top: 22%;
   transform: translate(0, 0) scale(4);
 }
 
 #socials > .inner > .bubbles > .inner > .bubble-17 {
-  opacity: 0.03;
-  left: 60vw;
-  top: 56%;
-  transform: translate(0, 0) scale(2);
-}
-
-#socials > .inner > .bubbles > .inner > .bubble-18 {
-  opacity: 0.63;
-  left: 48vw;
-  top: 26%;
+  opacity: 0.28;
+  left: 74vw;
+  top: 86%;
   transform: translate(0, 0) scale(3);
 }
 
+#socials > .inner > .bubbles > .inner > .bubble-18 {
+  opacity: 0.55;
+  left: 82vw;
+  top: 77%;
+  transform: translate(0, 0) scale(5);
+}
+
 #socials > .inner > .bubbles > .inner > .bubble-19 {
-  opacity: 0.36;
-  left: 2vw;
-  top: 29%;
-  transform: translate(0, 0) scale(4);
+  opacity: 0.73;
+  left: 9vw;
+  top: 100%;
+  transform: translate(0, 0) scale(3);
 }
 
 #socials > .inner > .bubbles > .inner > .bubble-20 {
-  opacity: 0.55;
-  left: 17vw;
-  top: 20%;
-  transform: translate(0, 0) scale(2);
+  opacity: 0.29;
+  left: 46vw;
+  top: 28%;
+  transform: translate(0, 0) scale(6);
 }
 
 #socials > .inner > .bubbles > .inner > .bubble-21 {
   opacity: 0.38;
-  left: 18vw;
-  top: 37%;
-  transform: translate(0, 0) scale(4);
-}
-
-#socials > .inner > .bubbles > .inner > .bubble-22 {
-  opacity: 0.88;
-  left: 50vw;
-  top: 41%;
+  left: 51vw;
+  top: 43%;
   transform: translate(0, 0) scale(2);
 }
 
+#socials > .inner > .bubbles > .inner > .bubble-22 {
+  opacity: 0.81;
+  left: 72vw;
+  top: 74%;
+  transform: translate(0, 0) scale(5);
+}
+
 #socials > .inner > .bubbles > .inner > .bubble-23 {
-  opacity: 0.72;
-  left: 88vw;
-  top: 15%;
+  opacity: 0.54;
+  left: 79vw;
+  top: 33%;
   transform: translate(0, 0) scale(5);
 }
 
 #socials > .inner > .bubbles > .inner > .bubble-24 {
-  opacity: 0.76;
-  left: 43vw;
-  top: 34%;
-  transform: translate(0, 0) scale(5);
+  opacity: 0.82;
+  left: 78vw;
+  top: 14%;
+  transform: translate(0, 0) scale(2);
 }
 
 #socials > .inner > .bubbles > .inner > .bubble-25 {
-  opacity: 0.44;
-  left: 87vw;
-  top: 6%;
-  transform: translate(0, 0) scale(2);
+  opacity: 0.86;
+  left: 84vw;
+  top: 31%;
+  transform: translate(0, 0) scale(4);
 }
 
 #socials > .inner > .bubbles > .inner > .bubble-26 {
-  opacity: 0.9;
-  left: 6vw;
-  top: 77%;
-  transform: translate(0, 0) scale(2);
+  opacity: 0.43;
+  left: 76vw;
+  top: 61%;
+  transform: translate(0, 0) scale(4);
 }
 
 #socials > .inner > .bubbles > .inner > .bubble-27 {
-  opacity: 0.09;
-  left: 98vw;
-  top: 4%;
-  transform: translate(0, 0) scale(5);
-}
-
-#socials > .inner > .bubbles > .inner > .bubble-28 {
-  opacity: 0.25;
-  left: 46vw;
-  top: 61%;
-  transform: translate(0, 0) scale(6);
-}
-
-#socials > .inner > .bubbles > .inner > .bubble-29 {
-  opacity: 0.18;
-  left: 7vw;
-  top: 49%;
+  opacity: 0.43;
+  left: 22vw;
+  top: 27%;
   transform: translate(0, 0) scale(2);
 }
 
-#socials > .inner > .bubbles > .inner > .bubble-30 {
-  opacity: 0.31;
-  left: 31vw;
-  top: 15%;
+#socials > .inner > .bubbles > .inner > .bubble-28 {
+  opacity: 0.38;
+  left: 22vw;
+  top: 2%;
   transform: translate(0, 0) scale(4);
+}
+
+#socials > .inner > .bubbles > .inner > .bubble-29 {
+  opacity: 0.47;
+  left: 9vw;
+  top: 19%;
+  transform: translate(0, 0) scale(6);
+}
+
+#socials > .inner > .bubbles > .inner > .bubble-30 {
+  opacity: 0.62;
+  left: 88vw;
+  top: 62%;
+  transform: translate(0, 0) scale(2);
 }
 
 #socials > .inner .links {

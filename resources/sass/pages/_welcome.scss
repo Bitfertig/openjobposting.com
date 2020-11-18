@@ -1,5 +1,5 @@
-.head {
-    @extend .bg-info, .mb-5, .d-flex, .align-items-center, .justify-content-center;
+.lead {
+    @extend .mb-5, .d-flex, .align-items-center, .justify-content-center;
     height: 250px;
     background-color: var(--color-action);
     background-image: url(../../../public/img/head.jpg);
@@ -13,12 +13,12 @@
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
 @media screen and (min-width: 900px) {
-    .head {
+    .lead {
         height: 400px;
     }
 }
 @media screen and (min-width: 1200px) {
-    .head {
+    .lead {
         height: 600px;
     }
 }

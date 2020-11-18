@@ -2,7 +2,7 @@
 
 
 @section('content')
-<div class="head">
+<div class="lead">
     <div class="container text-center py-5">
     Free job offering on the internet.
     </div>
