@@ -14,7 +14,12 @@ class WelcomeController extends Controller
      */
     public function index(Request $request)
     {
-        $jobs = Job::all()->random(10);
+        #$jobs = Job::all()->random(10);
+        $jobs = Job::
+            orderBy('created_at', 'desc')
+            ->take(100)
+            ->get()
+            ->random(10);
 
         return view('welcome', [
             'jobs' => $jobs,

@@ -28,7 +28,7 @@
             </a>
         @endforeach
         @if( !count($jobs ?? []) )
-            <div class="text-center font-italic">No result for "{{ $q }}".</div>
+            <div class="text-center font-italic">Sadly, we have no jobs at the moment.</div>
         @endif
     </div>
 
